@@ -1,711 +1,531 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Selected Work | Propeler Centar</title>
 <meta name="description" content="Case studies from Propeler Centar: DTech pension fund SaaS, UNDP-funded LIMS and SALW systems for Serbia's Ministry of Interior, the Ofrex B2B migration, Tribute Brand computer vision and more.">
+<meta property="og:title" content="Selected Work | Propeler Centar">
+<meta property="og:description" content="National systems, acquired platforms, real migrations: 14 projects across AI, data and software.">
 <meta name="theme-color" content="#001B2B">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Propeler Centar">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHJ4PSIxNCIgZmlsbD0iIzAwMzI0QyIvPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEwIDE1LjI1KSBzY2FsZSgwLjA3Njg0MikiIGZpbGw9IiNGRjk5NjkiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PHBhdGggZD0iTTEuMCAwLjMgTDUuOCAwLjAgTDEzLjMgMi42IEwyNS44IDQuMCBMMzEuOCA2LjYgTDg0LjMgMTYuMCBMMTEzLjggMjMuMCBMMTIyLjMgMjMuNiBMMTMwLjMgMjYuMCBMMTQyLjMgMjcuNiBMMTUxLjMgMzAuNiBMMTYyLjMgMzEuNiBMMTY4LjggMzQuMCBMMTgxLjggMzUuNiBMMTkwLjggMzguNiBMMjAxLjggMzkuNiBMMjEwLjggNDIuNiBMMjIxLjggNDMuNiBMMjMwLjggNDYuNiBMMjQxLjggNDcuNiBMMjQ3LjMgNTAuMCBMMjYyLjggNTIuMCBMMjcxLjggNTUuMCBMMjk0LjMgNTguMCBMNDM5LjMgNTkuMCBMNDQyLjggNjAuNiBMNDg4LjMgNjAuNiBMNDkzLjggNjIuMCBMNTIwLjMgNjIuMCBMNTI2LjMgNjMuMCBMNTM1LjMgNjcuNiBMNTQ1LjMgNzUuNiBMNTYwLjAgOTMuOCBMNTY1LjAgMTA1LjMgTDU2OC42IDExMC4zIEw1NzIuNiAxMjIuMyBMNTcyLjYgMTI3LjMgTDU2OS4zIDEyOS42IEw1NjEuOCAxMjcuMCBMNTQ5LjMgMTI2LjAgTDU0MC4zIDEyMy4wIEw1MzAuOCAxMjIuNiBMNTE2LjggMTE5LjAgTDUwNC44IDExOC4wIEw0OTcuOCAxMTUuNiBMNDgyLjMgMTE0LjAgTDQ3NS44IDExMS42IEw0NjIuMyAxMTAuNiBMNDU2LjMgMTA4LjAgTDQ0MS4zIDEwNi42IEw0MzEuOCAxMDMuNiBMNDE4LjggMTAyLjYgTDQxMC4zIDk5LjYgTDM5NC44IDk4LjAgTDM4OC4zIDk1LjYgTDM3NC44IDk0LjYgTDM2Mi44IDkxLjAgTDM1MC4zIDkwLjAgTDM0Mi44IDg3LjYgTDMzMi44IDg3LjAgTDMyMC4zIDgzLjYgTDMwNy44IDgyLjAgTDMwMy4wIDgyLjggTDMwMi42IDg2LjggTDMwNS42IDk0LjggTDMwNy4wIDEwOC44IEwzMDkuMCAxMTIuOCBMMzExLjAgMTI4LjMgTDMxMi4zIDEyOS42IEwzMzQuOCAxMzEuNiBMMzQwLjggMTM0LjAgTDM1MS44IDEzNS4wIEwzNTcuMyAxMzguMCBMMzYzLjggMTM5LjAgTDM4MS44IDE0Ny42IEwzODMuMyAxNDkuNiBMMzg4LjMgMTUxLjAgTDM5MC4zIDE1My42IEwzOTQuMyAxNTUuMCBMNDA0LjggMTYyLjYgTDQxOC42IDE3NS4zIEw0MzIuNiAxOTEuMyBMNDM4LjAgMjAxLjMgTDQ0MS4wIDIwNC4zIEw0NDYuNiAyMTYuOCBMNDQ5LjAgMjE5LjggTDQ1MC4wIDIyNC44IEw0NTMuMCAyMjkuMyBMNDU3LjAgMjQxLjMgTDQ2MS42IDI2My4zIEw0NjEuNiAzMDQuOCBMNDU4LjAgMzE3LjMgTDQ1Ny4wIDMyNS44IEw0NTQuMCAzMzEuOCBMNDUzLjAgMzM3LjggTDQzNy4wIDM2OC4zIEw0MzQuMCAzNzAuOCBMNDI5LjAgMzc5LjMgTDQxMi44IDM5Ni4wIEwzOTcuOCA0MDguMCBMMzk0LjggNDA5LjAgTDM5Mi4zIDQxMi4wIEwzODcuOCA0MTMuNiBMMzc3LjggNDIwLjAgTDM3My4zIDQyMS4wIEwzNjkuMyA0MjQuMCBMMzY0LjMgNDI1LjAgTDM1OS4zIDQyOC4wIEwzNTIuOCA0MjkuMCBMMzQ3LjggNDMxLjYgTDMzMy44IDQzMy4wIEwzMjcuOCA0MzUuMCBMMjk4LjggNDM2LjAgTDI3Mi44IDQzMi4wIEwyNDguOCA0MjQuMCBMMjQ1LjggNDIxLjYgTDIzMi44IDQxNi4wIEwyMjMuOCA0MDkuMCBMMjE5LjggNDA3LjYgTDIxMC44IDQwMC4wIEwxODcuNiAzNzUuOCBMMTc1LjYgMzU2LjggTDE3NC42IDM1Mi44IEwxNzIuMCAzNTAuMyBMMTcwLjYgMzQ0LjMgTDE2Ny42IDMzOS44IEwxNjYuNiAzMzQuMyBMMTYzLjYgMzI5LjMgTDE2Mi42IDMyMS44IEwxNTkuNiAzMTQuOCBMMTU4LjAgMjk4LjMgTDE1Ni42IDI5NC44IEwxNTYuNiAyNzAuOCBMMTU4LjYgMjYzLjggTDE2MC4wIDI0OC4zIEwxNjcuNiAyMjQuOCBMMTcwLjAgMjIxLjggTDE3MS42IDIxNS44IEwxNzQuMCAyMTMuMyBMMTc5LjAgMjAyLjMgTDE5Ni4wIDE3OS44IEwyMTkuMyAxNTkuMCBMMjI5LjggMTUzLjYgTDIzMS4zIDE1MS42IEwyMzYuOCAxNDkuNiBMMjM5LjMgMTQ3LjAgTDI1My4zIDE0MS42IEwyNTYuOCAxMzkuMCBMMjYzLjMgMTM4LjAgTDI2OS4zIDEzNS4wIEwyODEuOCAxMzMuNiBMMjg2LjAgMTI5LjggTDI3Ni42IDgxLjggTDI3My44IDc5LjAgTDI2NS4zIDc3LjYgTDIxMi4zIDc3LjYgTDIwOC4zIDc2LjAgTDQ5LjggNzQuMCBMNDcuMyA3Mi4wIEw0MS4zIDcwLjYgTDMzLjMgNjQuMCBMMTYuNiA0NC4zIEw0LjYgMjAuOCBMMC4wIDYuOCBMMS4wIDAuMyBaIE0zMDEuMyAyMDUuNiBMMjkxLjggMjA2LjYgTDI4MC4zIDIxMS4wIEwyNjQuMyAyMjIuNiBMMjU1LjAgMjMzLjggTDI0Ny42IDI0OC44IEwyNDMuNiAyNjIuOCBMMjQyLjYgMjcyLjMgTDI0My4wIDMwMC44IEwyNDguMCAzMTguOCBMMjUwLjAgMzIwLjggTDI1Mi4wIDMyNi44IEwyNTkuNiAzMzguMyBMMjY5LjggMzQ4LjAgTDI4Mi44IDM1Ni4wIEwyOTQuOCAzNjAuMCBMMzIwLjggMzYwLjYgTDMzNi44IDM1Ni4wIEwzNDQuOCAzNTEuNiBMMzUzLjggMzQ0LjYgTDM2NC42IDMzMS44IEwzNzIuNiAzMTQuOCBMMzc0LjYgMzAyLjMgTDM3Ny4wIDI5NS4zIEwzNzcuNiAyNzYuMyBMMzc2LjYgMjY2LjggTDM2OS42IDI0My4zIEwzNjQuNiAyMzQuMyBMMzU1LjggMjIzLjAgTDM0NC44IDIxNC42IEwzMjYuMyAyMDYuNiBMMzAxLjMgMjA1LjYgWiIvPjwvZz48L3N2Zz4=">
 <link rel="apple-touch-icon" href="data:image/png;base64,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">
-<link rel="mask-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHJ4PSIxNCIgZmlsbD0iIzAwMzI0QyIvPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEwIDE1LjI1KSBzY2FsZSgwLjA3Njg0MikiIGZpbGw9IiNGRjk5NjkiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PHBhdGggZD0iTTEuMCAwLjMgTDUuOCAwLjAgTDEzLjMgMi42IEwyNS44IDQuMCBMMzEuOCA2LjYgTDg0LjMgMTYuMCBMMTEzLjggMjMuMCBMMTIyLjMgMjMuNiBMMTMwLjMgMjYuMCBMMTQyLjMgMjcuNiBMMTUxLjMgMzAuNiBMMTYyLjMgMzEuNiBMMTY4LjggMzQuMCBMMTgxLjggMzUuNiBMMTkwLjggMzguNiBMMjAxLjggMzkuNiBMMjEwLjggNDIuNiBMMjIxLjggNDMuNiBMMjMwLjggNDYuNiBMMjQxLjggNDcuNiBMMjQ3LjMgNTAuMCBMMjYyLjggNTIuMCBMMjcxLjggNTUuMCBMMjk0LjMgNTguMCBMNDM5LjMgNTkuMCBMNDQyLjggNjAuNiBMNDg4LjMgNjAuNiBMNDkzLjggNjIuMCBMNTIwLjMgNjIuMCBMNTI2LjMgNjMuMCBMNTM1LjMgNjcuNiBMNTQ1LjMgNzUuNiBMNTYwLjAgOTMuOCBMNTY1LjAgMTA1LjMgTDU2OC42IDExMC4zIEw1NzIuNiAxMjIuMyBMNTcyLjYgMTI3LjMgTDU2OS4zIDEyOS42IEw1NjEuOCAxMjcuMCBMNTQ5LjMgMTI2LjAgTDU0MC4zIDEyMy4wIEw1MzAuOCAxMjIuNiBMNTE2LjggMTE5LjAgTDUwNC44IDExOC4wIEw0OTcuOCAxMTUuNiBMNDgyLjMgMTE0LjAgTDQ3NS44IDExMS42IEw0NjIuMyAxMTAuNiBMNDU2LjMgMTA4LjAgTDQ0MS4zIDEwNi42IEw0MzEuOCAxMDMuNiBMNDE4LjggMTAyLjYgTDQxMC4zIDk5LjYgTDM5NC44IDk4LjAgTDM4OC4zIDk1LjYgTDM3NC44IDk0LjYgTDM2Mi44IDkxLjAgTDM1MC4zIDkwLjAgTDM0Mi44IDg3LjYgTDMzMi44IDg3LjAgTDMyMC4zIDgzLjYgTDMwNy44IDgyLjAgTDMwMy4wIDgyLjggTDMwMi42IDg2LjggTDMwNS42IDk0LjggTDMwNy4wIDEwOC44IEwzMDkuMCAxMTIuOCBMMzExLjAgMTI4LjMgTDMxMi4zIDEyOS42IEwzMzQuOCAxMzEuNiBMMzQwLjggMTM0LjAgTDM1MS44IDEzNS4wIEwzNTcuMyAxMzguMCBMMzYzLjggMTM5LjAgTDM4MS44IDE0Ny42IEwzODMuMyAxNDkuNiBMMzg4LjMgMTUxLjAgTDM5MC4zIDE1My42IEwzOTQuMyAxNTUuMCBMNDA0LjggMTYyLjYgTDQxOC42IDE3NS4zIEw0MzIuNiAxOTEuMyBMNDM4LjAgMjAxLjMgTDQ0MS4wIDIwNC4zIEw0NDYuNiAyMTYuOCBMNDQ5LjAgMjE5LjggTDQ1MC4wIDIyNC44IEw0NTMuMCAyMjkuMyBMNDU3LjAgMjQxLjMgTDQ2MS42IDI2My4zIEw0NjEuNiAzMDQuOCBMNDU4LjAgMzE3LjMgTDQ1Ny4wIDMyNS44IEw0NTQuMCAzMzEuOCBMNDUzLjAgMzM3LjggTDQzNy4wIDM2OC4zIEw0MzQuMCAzNzAuOCBMNDI5LjAgMzc5LjMgTDQxMi44IDM5Ni4wIEwzOTcuOCA0MDguMCBMMzk0LjggNDA5LjAgTDM5Mi4zIDQxMi4wIEwzODcuOCA0MTMuNiBMMzc3LjggNDIwLjAgTDM3My4zIDQyMS4wIEwzNjkuMyA0MjQuMCBMMzY0LjMgNDI1LjAgTDM1OS4zIDQyOC4wIEwzNTIuOCA0MjkuMCBMMzQ3LjggNDMxLjYgTDMzMy44IDQzMy4wIEwzMjcuOCA0MzUuMCBMMjk4LjggNDM2LjAgTDI3Mi44IDQzMi4wIEwyNDguOCA0MjQuMCBMMjQ1LjggNDIxLjYgTDIzMi44IDQxNi4wIEwyMjMuOCA0MDkuMCBMMjE5LjggNDA3LjYgTDIxMC44IDQwMC4wIEwxODcuNiAzNzUuOCBMMTc1LjYgMzU2LjggTDE3NC42IDM1Mi44IEwxNzIuMCAzNTAuMyBMMTcwLjYgMzQ0LjMgTDE2Ny42IDMzOS44IEwxNjYuNiAzMzQuMyBMMTYzLjYgMzI5LjMgTDE2Mi42IDMyMS44IEwxNTkuNiAzMTQuOCBMMTU4LjAgMjk4LjMgTDE1Ni42IDI5NC44IEwxNTYuNiAyNzAuOCBMMTU4LjYgMjYzLjggTDE2MC4wIDI0OC4zIEwxNjcuNiAyMjQuOCBMMTcwLjAgMjIxLjggTDE3MS42IDIxNS44IEwxNzQuMCAyMTMuMyBMMTc5LjAgMjAyLjMgTDE5Ni4wIDE3OS44IEwyMTkuMyAxNTkuMCBMMjI5LjggMTUzLjYgTDIzMS4zIDE1MS42IEwyMzYuOCAxNDkuNiBMMjM5LjMgMTQ3LjAgTDI1My4zIDE0MS42IEwyNTYuOCAxMzkuMCBMMjYzLjMgMTM4LjAgTDI2OS4zIDEzNS4wIEwyODEuOCAxMzMuNiBMMjg2LjAgMTI5LjggTDI3Ni42IDgxLjggTDI3My44IDc5LjAgTDI2NS4zIDc3LjYgTDIxMi4zIDc3LjYgTDIwOC4zIDc2LjAgTDQ5LjggNzQuMCBMNDcuMyA3Mi4wIEw0MS4zIDcwLjYgTDMzLjMgNjQuMCBMMTYuNiA0NC4zIEw0LjYgMjAuOCBMMC4wIDYuOCBMMS4wIDAuMyBaIE0zMDEuMyAyMDUuNiBMMjkxLjggMjA2LjYgTDI4MC4zIDIxMS4wIEwyNjQuMyAyMjIuNiBMMjU1LjAgMjMzLjggTDI0Ny42IDI0OC44IEwyNDMuNiAyNjIuOCBMMjQyLjYgMjcyLjMgTDI0My4wIDMwMC44IEwyNDguMCAzMTguOCBMMjUwLjAgMzIwLjggTDI1Mi4wIDMyNi44IEwyNTkuNiAzMzguMyBMMjY5LjggMzQ4LjAgTDI4Mi44IDM1Ni4wIEwyOTQuOCAzNjAuMCBMMzIwLjggMzYwLjYgTDMzNi44IDM1Ni4wIEwzNDQuOCAzNTEuNiBMMzUzLjggMzQ0LjYgTDM2NC42IDMzMS44IEwzNzIuNiAzMTQuOCBMMzc0LjYgMzAyLjMgTDM3Ny4wIDI5NS4zIEwzNzcuNiAyNzYuMyBMMzc2LjYgMjY2LjggTDM2OS42IDI0My4zIEwzNjQuNiAyMzQuMyBMMzU1LjggMjIzLjAgTDM0NC44IDIxNC42IEwzMjYuMyAyMDYuNiBMMzAxLjMgMjA1LjYgWiIvPjwvZz48L3N2Zz4=" color="#FF9969">
-<script>document.documentElement.classList.add('js');</script>
-<meta property="og:title" content="Selected Work | Propeler Centar">
-<meta property="og:description" content="National systems, acquired platforms, real migrations — 14 projects across AI, data and software.">
-<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>/*! tailwindcss v3.4.17 | MIT */
-*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/*! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com*/*,:after,:before{box-sizing:border-box;border:0 solid #e5e7eb}:after,:before{--tw-content:""}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;-o-tab-size:4;tab-size:4;font-family:Inter,system-ui,sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{opacity:1;color:#9ca3af}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}.pointer-events-none{pointer-events:none}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.-right-10{right:-2.5rem}.-right-16{right:-4rem}.-right-24{right:-6rem}.-top-16{top:-4rem}.-top-8{top:-2rem}.top-0{top:0}.top-1\/2{top:50%}.top-20{top:5rem}.z-10{z-index:10}.z-20{z-index:20}.z-40{z-index:40}.z-50{z-index:50}.col-span-2{grid-column:span 2/span 2}.mx-auto{margin-left:auto;margin-right:auto}.mb-1\.5{margin-bottom:.375rem}.mb-10{margin-bottom:2.5rem}.mb-12{margin-bottom:3rem}.mb-14{margin-bottom:3.5rem}.mb-3{margin-bottom:.75rem}.mb-4{margin-bottom:1rem}.mb-5{margin-bottom:1.25rem}.mb-6{margin-bottom:1.5rem}.mb-7{margin-bottom:1.75rem}.mb-8{margin-bottom:2rem}.mb-9{margin-bottom:2.25rem}.ml-auto{margin-left:auto}.mt-0\.5{margin-top:.125rem}.mt-1{margin-top:.25rem}.mt-10{margin-top:2.5rem}.mt-12{margin-top:3rem}.mt-2{margin-top:.5rem}.mt-3{margin-top:.75rem}.mt-4{margin-top:1rem}.mt-7{margin-top:1.75rem}.mt-8{margin-top:2rem}.mt-\[3px\]{margin-top:3px}.mt-auto{margin-top:auto}.block{display:block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-1\.5{height:.375rem}.h-11{height:2.75rem}.h-20{height:5rem}.h-4{height:1rem}.h-5{height:1.25rem}.h-56{height:14rem}.h-6{height:1.5rem}.h-7{height:1.75rem}.h-72{height:18rem}.h-80{height:20rem}.min-h-\[calc\(100vh-80px\)\]{min-height:calc(100vh - 80px)}.w-1\.5{width:.375rem}.w-11{width:2.75rem}.w-24{width:6rem}.w-4{width:1rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-auto{width:auto}.w-fit{width:-moz-fit-content;width:fit-content}.w-full{width:100%}.min-w-0{min-width:0}.max-w-2xl{max-width:42rem}.max-w-3xl{max-width:48rem}.max-w-4xl{max-width:56rem}.max-w-7xl{max-width:80rem}.max-w-sm{max-width:24rem}.max-w-xl{max-width:36rem}.shrink-0{flex-shrink:0}.flex-grow,.grow{flex-grow:1}.-translate-y-1\/2{--tw-translate-y:-50%;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.items-baseline{align-items:baseline}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-10{gap:2.5rem}.gap-14{gap:3.5rem}.gap-2{gap:.5rem}.gap-2\.5{gap:.625rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.gap-5{gap:1.25rem}.gap-6{gap:1.5rem}.gap-7{gap:1.75rem}.gap-8{gap:2rem}.gap-x-10{-moz-column-gap:2.5rem;column-gap:2.5rem}.gap-x-6{-moz-column-gap:1.5rem;column-gap:1.5rem}.gap-y-10{row-gap:2.5rem}.gap-y-px{row-gap:1px}.space-y-3>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.75rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.75rem*var(--tw-space-y-reverse))}.space-y-5>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.25rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.25rem*var(--tw-space-y-reverse))}.space-y-6>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem*var(--tw-space-y-reverse))}.space-y-px>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1px*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1px*var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.scroll-smooth{scroll-behavior:smooth}.whitespace-nowrap{white-space:nowrap}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:.5rem}.rounded-md{border-radius:.375rem}.rounded-xl{border-radius:.75rem}.border{border-width:1px}.border-y{border-top-width:1px}.border-b,.border-y{border-bottom-width:1px}.border-t{border-top-width:1px}.border-brand\/30{border-color:rgba(255,153,105,.3)}.border-white\/10{border-color:hsla(0,0%,100%,.1)}.border-white\/15{border-color:hsla(0,0%,100%,.15)}.bg-brand{--tw-bg-opacity:1;background-color:rgb(255 153 105/var(--tw-bg-opacity,1))}.bg-brand\/10{background-color:rgba(255,153,105,.1)}.bg-navy-700\/40{background-color:rgba(0,50,76,.4)}.bg-navy-700\/50{background-color:rgba(0,50,76,.5)}.bg-navy-800\/50{background-color:rgba(0,35,56,.5)}.bg-navy-800\/60{background-color:rgba(0,35,56,.6)}.bg-navy-800\/70{background-color:rgba(0,35,56,.7)}.bg-navy-900{--tw-bg-opacity:1;background-color:rgb(0 27 43/var(--tw-bg-opacity,1))}.bg-navy-900\/85{background-color:rgba(0,27,43,.85)}.bg-navy-900\/90{background-color:rgba(0,27,43,.9)}.bg-navy-950{--tw-bg-opacity:1;background-color:rgb(0 19 31/var(--tw-bg-opacity,1))}.bg-navy-950\/40{background-color:rgba(0,19,31,.4)}.bg-white\/5{background-color:hsla(0,0%,100%,.05)}.p-2{padding:.5rem}.p-6{padding:1.5rem}.p-7{padding:1.75rem}.p-8{padding:2rem}.px-2\.5{padding-left:.625rem;padding-right:.625rem}.px-3{padding-left:.75rem;padding-right:.75rem}.px-3\.5{padding-left:.875rem;padding-right:.875rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-7{padding-left:1.75rem;padding-right:1.75rem}.px-8{padding-left:2rem;padding-right:2rem}.py-1{padding-top:.25rem;padding-bottom:.25rem}.py-1\.5{padding-top:.375rem;padding-bottom:.375rem}.py-14{padding-top:3.5rem;padding-bottom:3.5rem}.py-16{padding-top:4rem;padding-bottom:4rem}.py-2{padding-top:.5rem;padding-bottom:.5rem}.py-2\.5{padding-top:.625rem;padding-bottom:.625rem}.py-20{padding-top:5rem;padding-bottom:5rem}.py-24{padding-top:6rem;padding-bottom:6rem}.py-3{padding-top:.75rem;padding-bottom:.75rem}.py-3\.5{padding-top:.875rem;padding-bottom:.875rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-5{padding-top:1.25rem;padding-bottom:1.25rem}.pb-14{padding-bottom:3.5rem}.pb-16{padding-bottom:4rem}.pb-5{padding-bottom:1.25rem}.pt-20{padding-top:5rem}.pt-5{padding-top:1.25rem}.pt-6{padding-top:1.5rem}.pt-7{padding-top:1.75rem}.text-center{text-align:center}.text-right{text-align:right}.font-display{font-family:Outfit,system-ui,sans-serif}.font-sans{font-family:Inter,system-ui,sans-serif}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-\[15px\]{font-size:15px}.text-\[17px\]{font-size:17px}.text-\[2\.5rem\]{font-size:2.5rem}.text-\[9px\]{font-size:9px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:.75rem;line-height:1rem}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-light{font-weight:300}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-\[1\.08\]{line-height:1.08}.leading-none{line-height:1}.leading-relaxed{line-height:1.625}.leading-snug{line-height:1.375}.leading-tight{line-height:1.25}.tracking-\[\.06em\]{letter-spacing:.06em}.tracking-\[\.14em\]{letter-spacing:.14em}.tracking-\[\.16em\]{letter-spacing:.16em}.tracking-\[\.18em\]{letter-spacing:.18em}.tracking-\[\.22em\]{letter-spacing:.22em}.tracking-\[\.2em\]{letter-spacing:.2em}.tracking-\[\.42em\]{letter-spacing:.42em}.tracking-tight{letter-spacing:-.025em}.text-brand{--tw-text-opacity:1;color:rgb(255 153 105/var(--tw-text-opacity,1))}.text-brand\/70{color:rgba(255,153,105,.7)}.text-mist{--tw-text-opacity:1;color:rgb(175 198 212/var(--tw-text-opacity,1))}.text-mist-200{--tw-text-opacity:1;color:rgb(220 231 238/var(--tw-text-opacity,1))}.text-mist-200\/70{color:rgba(220,231,238,.7)}.text-mist-400{--tw-text-opacity:1;color:rgb(175 198 212/var(--tw-text-opacity,1))}.text-mist-600{--tw-text-opacity:1;color:rgb(122 152 171/var(--tw-text-opacity,1))}.text-navy-900{--tw-text-opacity:1;color:rgb(0 27 43/var(--tw-text-opacity,1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.text-white\/\[\.035\]{color:hsla(0,0%,100%,.035)}.text-white\/\[\.03\]{color:hsla(0,0%,100%,.03)}.underline-offset-4{text-underline-offset:4px}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgba(0,0,0,.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px)}.backdrop-blur-sm,.backdrop-blur-xl{-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-xl{--tw-backdrop-blur:blur(24px)}.transition-colors{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.hover\:border-brand\/40:hover{border-color:rgba(255,153,105,.4)}.hover\:border-brand\/50:hover{border-color:rgba(255,153,105,.5)}.hover\:bg-white\/5:hover{background-color:hsla(0,0%,100%,.05)}.hover\:text-brand:hover{--tw-text-opacity:1;color:rgb(255 153 105/var(--tw-text-opacity,1))}.hover\:text-brand-400:hover{--tw-text-opacity:1;color:rgb(255 178 139/var(--tw-text-opacity,1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.hover\:underline:hover{text-decoration-line:underline}.focus\:not-sr-only:focus{position:static;width:auto;height:auto;padding:0;margin:0;overflow:visible;clip:auto;white-space:normal}.focus\:absolute:focus{position:absolute}.focus\:left-4:focus{left:1rem}.focus\:top-4:focus{top:1rem}.focus\:z-\[60\]:focus{z-index:60}.focus\:rounded-lg:focus{border-radius:.5rem}.focus\:bg-brand:focus{--tw-bg-opacity:1;background-color:rgb(255 153 105/var(--tw-bg-opacity,1))}.focus\:px-4:focus{padding-left:1rem;padding-right:1rem}.focus\:py-2:focus{padding-top:.5rem;padding-bottom:.5rem}.focus\:font-semibold:focus{font-weight:600}.focus\:text-navy-900:focus{--tw-text-opacity:1;color:rgb(0 27 43/var(--tw-text-opacity,1))}@media (min-width:640px){.sm\:block{display:block}.sm\:inline-flex{display:inline-flex}.sm\:h-96{height:24rem}.sm\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.sm\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.sm\:flex-row{flex-direction:row}.sm\:items-end{align-items:flex-end}.sm\:items-center{align-items:center}.sm\:justify-between{justify-content:space-between}.sm\:gap-10{gap:2.5rem}.sm\:gap-8{gap:2rem}.sm\:p-10{padding:2.5rem}.sm\:p-8{padding:2rem}.sm\:py-20{padding-top:5rem;padding-bottom:5rem}.sm\:py-24{padding-top:6rem;padding-bottom:6rem}.sm\:py-28{padding-top:7rem;padding-bottom:7rem}.sm\:py-32{padding-top:8rem;padding-bottom:8rem}.sm\:pt-28{padding-top:7rem}.sm\:text-2xl{font-size:1.5rem;line-height:2rem}.sm\:text-3xl{font-size:1.875rem;line-height:2.25rem}.sm\:text-5xl{font-size:3rem;line-height:1}.sm\:text-\[2\.75rem\]{font-size:2.75rem}.sm\:text-\[3rem\]{font-size:3rem}.sm\:text-lg{font-size:1.125rem;line-height:1.75rem}.sm\:leading-\[1\.5\]{line-height:1.5}}@media (min-width:768px){.md\:col-span-2{grid-column:span 2/span 2}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.md\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}}@media (min-width:1024px){.lg\:block{display:block}.lg\:flex{display:flex}.lg\:hidden{display:none}.lg\:max-w-7xl{max-width:80rem}.lg\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.lg\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.lg\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}.lg\:grid-cols-\[1\.05fr_\.95fr\]{grid-template-columns:1.05fr .95fr}.lg\:grid-cols-\[1\.15fr_\.85fr\]{grid-template-columns:1.15fr .85fr}.lg\:grid-cols-\[minmax\(0\2c 17rem\)_1fr\]{grid-template-columns:minmax(0,17rem) 1fr}.lg\:gap-12{gap:3rem}.lg\:gap-14{gap:3.5rem}.lg\:gap-20{gap:5rem}.lg\:py-10{padding-top:2.5rem;padding-bottom:2.5rem}.lg\:pl-4{padding-left:1rem}}@media (min-width:1280px){.xl\:text-\[3\.4rem\]{font-size:3.4rem}.xl\:text-\[3\.6rem\]{font-size:3.6rem}}</style>
-<style>
-  :root { color-scheme: dark; }
-  body { background-color:#001B2B; }
-
-  /* ---------------- background canvas ---------------- */
-  .bg-canvas::before{
-    content:''; position:fixed; inset:0; z-index:-2; pointer-events:none;
-    background-image:
-      linear-gradient(rgba(255,255,255,.028) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,.028) 1px, transparent 1px);
-    background-size:64px 64px;
-    mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, #000 35%, transparent 85%);
-    -webkit-mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, #000 35%, transparent 85%);
-  }
-  .bg-canvas::after{
-    content:''; position:fixed; top:-18rem; left:50%; width:70rem; height:45rem; z-index:-2;
-    transform:translateX(-50%); pointer-events:none;
-    background:radial-gradient(circle, rgba(255,153,105,.16) 0%, transparent 62%);
-    animation: glowDrift 22s ease-in-out infinite;
-  }
-  @keyframes glowDrift{
-    0%,100% { transform:translateX(-50%) translateY(0) scale(1);        opacity:.85 }
-    50%     { transform:translateX(-50%) translateY(46px) scale(1.14);  opacity:1 }
-  }
-
-  .rule { height:1px; background:linear-gradient(90deg, rgba(255,153,105,.55), rgba(255,153,105,0)); }
-
-  /* ---------------- logo: the blade spins ---------------- */
-  .logo-link { perspective: 700px; }
-  .logo-mark { transition: transform .9s cubic-bezier(.3,1.05,.4,1); }
-  .js .logo-mark { animation: propSpin 1.15s cubic-bezier(.25,.9,.3,1) .15s backwards; }
-  .logo-link:hover .logo-mark,
-  .logo-link:focus-visible .logo-mark { transform: rotateY(360deg); }
-  @keyframes propSpin{ from{ transform:rotateY(-360deg) } to{ transform:rotateY(0) } }
-
-  /* ---------------- nav underline ---------------- */
-  .nav-link { position:relative; }
-  .nav-link::after{
-    content:''; position:absolute; left:0; right:0; bottom:-7px; height:2px; border-radius:2px;
-    background:#FF9969; transform:scaleX(0); transform-origin:right;
-    transition:transform .32s cubic-bezier(.22,1,.36,1);
-  }
-  .nav-link:hover::after { transform:scaleX(1); transform-origin:left; }
-  .nav-link[aria-current="page"]::after { transform:scaleX(1); }
-
-  /* ---------------- buttons & arrows ---------------- */
-  .btn-primary { transition: transform .25s cubic-bezier(.22,1,.36,1), box-shadow .25s ease, background-color .2s ease; }
-  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 16px 34px -14px rgba(255,153,105,.75); }
-  .btn-primary:active { transform: translateY(0); }
-
-  .arrow { transition: transform .28s cubic-bezier(.22,1,.36,1); }
-  a:hover .arrow, button:hover .arrow { transform: translateX(5px); }
-
-  /* ---------------- cards ---------------- */
-  .card { transition: transform .4s cubic-bezier(.22,1,.36,1), border-color .4s ease, background-color .4s ease, box-shadow .4s ease; }
-  .card:hover {
-    transform: translateY(-6px);
-    border-color: rgba(255,153,105,.45);
-    background-color:#002338;
-    box-shadow: 0 24px 48px -28px rgba(0,0,0,.95);
-  }
-  .card-icon { transition: transform .4s cubic-bezier(.34,1.45,.5,1), background-color .4s ease; }
-  .card:hover .card-icon { transform: translateY(-3px) scale(1.09) rotate(-5deg); background-color: rgba(255,153,105,.2); }
-
-  .case { transition: border-color .4s ease, background-color .4s ease; }
-  .case:hover { border-color: rgba(255,153,105,.35); background-color:#002338; }
-
-  /* ---------------- filter chips ---------------- */
-  .chip { transition: color .25s ease, background-color .25s ease, border-color .25s ease, transform .18s ease; }
-  .chip:hover { border-color: rgba(255,153,105,.5); color:#fff; }
-  .chip:active { transform: scale(.95); }
-  .chip[aria-pressed="true"]{ background:#FF9969; border-color:#FF9969; color:#001B2B; }
-
-  @keyframes popIn{ from{ opacity:0; transform:translateY(12px) } to{ opacity:1; transform:none } }
-  .filter-enter { animation: popIn .45s cubic-bezier(.22,1,.36,1) both; }
-
-  /* ---------------- hero entrance ---------------- */
-  @keyframes heroUp{ from{ opacity:0; transform:translateY(26px) } to{ opacity:1; transform:none } }
-  @keyframes heroPanel{ from{ opacity:0; transform:translateY(28px) scale(.985) } to{ opacity:1; transform:none } }
-  .js .hero-stagger > * { opacity:0; animation: heroUp .85s cubic-bezier(.22,1,.36,1) forwards; }
-  .js .hero-stagger > *:nth-child(1){ animation-delay:.10s }
-  .js .hero-stagger > *:nth-child(2){ animation-delay:.18s }
-  .js .hero-stagger > *:nth-child(3){ animation-delay:.26s }
-  .js .hero-stagger > *:nth-child(4){ animation-delay:.34s }
-  .js .hero-stagger > *:nth-child(5){ animation-delay:.42s }
-  .js .hero-panel { opacity:0; animation: heroPanel 1s cubic-bezier(.22,1,.36,1) .30s forwards; }
-
-  /* ---------------- scroll reveal ---------------- */
-  .js .reveal { opacity:0; transform:translateY(22px);
-    transition:opacity .75s cubic-bezier(.22,1,.36,1), transform .75s cubic-bezier(.22,1,.36,1); }
-  .js .reveal.is-in { opacity:1; transform:none; }
-
-  .js .stagger > * { opacity:0; transform:translateY(22px);
-    transition:opacity .7s cubic-bezier(.22,1,.36,1), transform .7s cubic-bezier(.22,1,.36,1); }
-  .js .stagger.is-in > * { opacity:1; transform:none; }
-  .js .stagger.is-in > *:nth-child(1){ transition-delay:0s }
-  .js .stagger.is-in > *:nth-child(2){ transition-delay:.06s }
-  .js .stagger.is-in > *:nth-child(3){ transition-delay:.12s }
-  .js .stagger.is-in > *:nth-child(4){ transition-delay:.18s }
-  .js .stagger.is-in > *:nth-child(5){ transition-delay:.24s }
-  .js .stagger.is-in > *:nth-child(6){ transition-delay:.30s }
-  .js .stagger.is-in > *:nth-child(7){ transition-delay:.36s }
-  .js .stagger.is-in > *:nth-child(8){ transition-delay:.42s }
-  .js .stagger.is-in > *:nth-child(9){ transition-delay:.48s }
-  .js .stagger.is-in > *:nth-child(10){ transition-delay:.54s }
-  .js .stagger.is-in > *:nth-child(11){ transition-delay:.60s }
-  .js .stagger.is-in > *:nth-child(12){ transition-delay:.66s }
-
-  /* counting numbers keep their own width so neighbours don't jump */
-  [data-count] { font-variant-numeric: tabular-nums; }
-
-  /* ---------------- misc ---------------- */
-  .hide-scrollbar::-webkit-scrollbar{ display:none; }
-  .hide-scrollbar{ -ms-overflow-style:none; scrollbar-width:none; }
-
-  section[id], main[id] { scroll-margin-top: 96px; }
-  article[id] { scroll-margin-top: 152px; }
-
-  ::selection { background:#FF9969; color:#001B2B; }
-  :focus-visible { outline:2px solid #FF9969; outline-offset:3px; border-radius:4px; }
-
-  /* ---------------- reduced motion: everything settles instantly ---------------- */
-  @media (prefers-reduced-motion: reduce){
-    *, *::before, *::after{
-      animation-duration:.001ms !important;
-      animation-iteration-count:1 !important;
-      transition-duration:.001ms !important;
-    }
-    .js .reveal, .js .stagger > *, .js .hero-stagger > *, .js .hero-panel{
-      opacity:1 !important; transform:none !important;
-    }
-    html{ scroll-behavior:auto; }
-  }
-</style>
+<script>document.documentElement.classList.add('js');</script>
+<style>*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/*! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com*/*,:after,:before{box-sizing:border-box;border:0 solid #e5e7eb}:after,:before{--tw-content:""}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;-o-tab-size:4;tab-size:4;font-family:Inter,system-ui,sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{opacity:1;color:#9ca3af}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}:root{color-scheme:dark;--ease:cubic-bezier(.22,1,.36,1);--hdr:64px}@media (min-width:1024px){:root{--hdr:80px}}html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}body{background-color:#001b2b;color:#93acbd}h1,h2,h3,h4{text-wrap:balance}[id]{scroll-margin-top:calc(var(--hdr) + 24px)}::-moz-selection{background:#ff9969;color:#001b2b}::selection{background:#ff9969;color:#001b2b}:focus-visible{outline:2px solid #ff9969;outline-offset:3px;border-radius:6px}.wrap{margin-left:auto;margin-right:auto;width:100%;max-width:76rem;padding-left:1.25rem;padding-right:1.25rem}@media (min-width:640px){.wrap{padding-left:2rem;padding-right:2rem}}.section{padding-top:4rem;padding-bottom:4rem}@media (min-width:640px){.section{padding-top:6rem;padding-bottom:6rem}}@media (min-width:1024px){.section{padding-top:7rem;padding-bottom:7rem}}.surface-alt{border-block:1px solid hsla(0,0%,100%,.06)}.surface-alt,.surface-alt .hairgrid>*{background-color:#00233a}.eyebrow{display:flex;align-items:center;gap:.75rem;align-self:flex-start;font-size:11px;font-weight:700;text-transform:uppercase;line-height:1;letter-spacing:.2em;--tw-text-opacity:1;color:rgb(255 153 105/var(--tw-text-opacity,1))}.eyebrow:before{content:"";height:1px;width:1.75rem;flex-shrink:0;background-color:currentColor}.h1{font-size:clamp(2.1rem,1.3rem + 3.7vw,4.4rem);line-height:1.04;letter-spacing:-.018em}.h1,.h2{font-family:Outfit,system-ui,sans-serif;font-weight:800;--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.h2{font-size:clamp(1.75rem,1.2rem + 2.5vw,3.1rem);line-height:1.08;letter-spacing:-.015em}.h3{font-family:Outfit,system-ui,sans-serif;font-size:1.2rem;font-weight:700;line-height:1.375;color:rgb(255 255 255/var(--tw-text-opacity,1))}.h3,.lead{--tw-text-opacity:1}.lead{color:rgb(175 198 212/var(--tw-text-opacity,1));font-size:clamp(1rem,.94rem + .35vw,1.25rem);line-height:1.65}.copy{font-size:15.5px;line-height:1.7;color:rgb(147 172 189/var(--tw-text-opacity,1))}.copy,.statement{--tw-text-opacity:1}.statement{font-family:Outfit,system-ui,sans-serif;font-weight:300;color:rgb(220 231 238/var(--tw-text-opacity,1));font-size:clamp(1.2rem,.92rem + 1.35vw,2.15rem);line-height:1.38;letter-spacing:-.012em}.statement strong{font-weight:500;--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.statement mark{color:#ff9969;background:none;font-weight:500}.\!btn,.btn{display:inline-flex;height:3rem;align-items:center;justify-content:center;gap:.625rem;white-space:nowrap;border-radius:.75rem;padding-left:1.5rem;padding-right:1.5rem;font-family:Outfit,system-ui,sans-serif;font-size:15px;font-weight:700;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.2s}.btn-lg{height:3.5rem;padding-left:1.75rem;padding-right:1.75rem;font-size:1rem;line-height:1.5rem}.btn-primary{--tw-bg-opacity:1;background-color:rgb(255 153 105/var(--tw-bg-opacity,1));--tw-text-opacity:1;color:rgb(0 27 43/var(--tw-text-opacity,1))}.btn-primary:hover{--tw-bg-opacity:1;background-color:rgb(255 178 139/var(--tw-bg-opacity,1))}.link-arrow{display:inline-flex;align-items:center;gap:.5rem;font-family:Outfit,system-ui,sans-serif;font-size:15px;font-weight:700;--tw-text-opacity:1;color:rgb(255 153 105/var(--tw-text-opacity,1));transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.link-arrow:hover{--tw-text-opacity:1;color:rgb(255 178 139/var(--tw-text-opacity,1))}.tag{border-radius:.375rem;background-color:rgba(255,153,105,.1);padding:5px .5rem;font-size:10.5px;font-weight:700;text-transform:uppercase;line-height:1;letter-spacing:.12em;color:rgb(255 153 105/var(--tw-text-opacity,1))}.tag,.tech{display:inline-flex;align-items:center;--tw-text-opacity:1}.tech{border-radius:.5rem;background-color:hsla(0,0%,100%,.06);padding:.375rem .625rem;font-size:.75rem;line-height:1rem;font-weight:600;color:rgb(220 231 238/var(--tw-text-opacity,1))}.hairgrid{display:grid;overflow:hidden;border-radius:1rem;border-width:1px;border-color:hsla(0,0%,100%,.1);background-color:hsla(0,0%,100%,.1);gap:1px}.hairgrid>*{background-color:#001b2b}.case-stats>.flex-col-reverse,.hairgrid>.flex-col-reverse{justify-content:flex-end}.site-header{position:sticky;top:0;z-index:50;background:rgba(0,27,43,.72);-webkit-backdrop-filter:saturate(1.4) blur(18px);backdrop-filter:saturate(1.4) blur(18px);border-bottom:1px solid transparent;transition:border-color .3s ease,background-color .3s ease,box-shadow .3s ease}.nav-link{position:relative;padding-top:.5rem;padding-bottom:.5rem;font-size:14px;font-weight:600;--tw-text-opacity:1;color:rgb(175 198 212/var(--tw-text-opacity,1));transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.nav-link:hover,.nav-link[aria-current=page]{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.nav-link:after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;border-radius:2px;background:#ff9969;transform:scaleX(0);transform-origin:right;transition:transform .32s var(--ease)}.nav-link:hover:after{transform:scaleX(1);transform-origin:left}.nav-link[aria-current=page]:after{transform:scaleX(1)}.menu-btn{position:relative;margin-right:-.625rem;height:2.75rem;width:2.75rem;border-radius:.5rem;--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.menu-btn span{position:absolute;left:12px;right:12px;height:2px;border-radius:2px;background:currentColor;transition:top .3s var(--ease),transform .3s var(--ease),opacity .2s ease}.menu-btn span:first-child{top:15px}.menu-btn span:nth-child(2){top:21px}.menu-btn span:nth-child(3){top:27px}.mobile-menu{position:fixed;inset:64px 0 0 0;z-index:45;flex-direction:column;background:#001b2b;overflow-y:auto;overscroll-behavior:contain;visibility:hidden;transform:translateY(-6px);transition:opacity .28s ease,transform .35s var(--ease),visibility 0s linear .35s}.mm-link,.mobile-menu{display:flex;opacity:0}.mm-link{align-items:center;gap:16px;padding:20px 0;border-bottom:1px solid hsla(0,0%,100%,.08);font-family:Outfit,system-ui,sans-serif;font-weight:700;font-size:1.85rem;line-height:1.1;letter-spacing:-.015em;color:#fff;transform:translateY(10px);transition:opacity .4s ease,transform .5s var(--ease),color .2s ease}.mm-link:hover{color:#ffb28b}.mm-link[aria-current=page]{color:#ff9969}.mm-num{font-family:Inter,system-ui,sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;color:#7a98ab;min-width:22px}.mm-link svg{margin-left:auto;opacity:.45}.hero-bg{overflow:hidden;pointer-events:none}.hero-bg,.hero-bg:before{position:absolute;inset:0}.hero-bg:before{content:"";background-image:linear-gradient(hsla(0,0%,100%,.035) 1px,transparent 0),linear-gradient(90deg,hsla(0,0%,100%,.035) 1px,transparent 0);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse 85% 75% at 75% 0,#000 15%,transparent 72%);mask-image:radial-gradient(ellipse 85% 75% at 75% 0,#000 15%,transparent 72%)}.hero-bg:after{content:"";position:absolute;width:60rem;height:60rem;top:-32rem;right:-20rem;background:radial-gradient(circle,rgba(255,153,105,.2),transparent 60%);animation:glowDrift 24s ease-in-out infinite}.svc-grid{display:grid;border-top:1px solid hsla(0,0%,100%,.1)}.svc{padding:24px 0;border-bottom:1px solid hsla(0,0%,100%,.1)}.svc-icon{display:grid;place-items:center;width:44px;height:44px;flex-shrink:0;border-radius:12px;background:rgba(255,153,105,.12);color:#ff9969;box-shadow:inset 0 0 0 1px rgba(255,153,105,.28);transition:transform .45s cubic-bezier(.34,1.45,.5,1),background-color .3s ease,color .3s ease}.svc:hover .svc-icon{transform:rotate(-7deg) scale(1.07);background:#ff9969;color:#001b2b}.feat-scroller{display:grid;gap:14px}.feat{position:relative;display:flex;flex-direction:column;overflow:hidden;border-radius:20px;border:1px solid hsla(0,0%,100%,.1);background:#002338;padding:24px;transition:border-color .35s ease,transform .45s var(--ease),background-color .35s ease}.feat:hover{border-color:rgba(255,153,105,.45);transform:translateY(-4px)}.feat-lg{background:linear-gradient(160deg,#00324c,#002338 60%)}.steps{display:grid}.step{position:relative;padding:0 0 36px 58px}.step:before{content:"";position:absolute;left:18px;top:44px;bottom:6px;width:1px;background:hsla(0,0%,100%,.1)}.step:last-child{padding-bottom:0}.step:last-child:before{display:none}.step-num{position:absolute;left:0;top:0;display:grid;place-items:center;width:37px;height:37px;border-radius:999px;background:#ff9969;color:#001b2b;font:800 13px/1 Outfit,system-ui,sans-serif;letter-spacing:.04em}.filter-bar{position:sticky;top:var(--hdr);z-index:40;background:rgba(0,27,43,.93);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-bottom:1px solid hsla(0,0%,100%,.08)}.chips-scroll{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:12px 0;-webkit-mask-image:linear-gradient(90deg,#000 86%,transparent);mask-image:linear-gradient(90deg,#000 86%,transparent)}.chips-scroll::-webkit-scrollbar{display:none}.chips-scroll.at-end{-webkit-mask-image:none;mask-image:none}.chip{flex-shrink:0;height:36px;padding:0 15px;border-radius:999px;border:1px solid hsla(0,0%,100%,.16);font-size:13px;font-weight:700;color:#dce7ee;transition:color .2s ease,background-color .2s ease,border-color .2s ease,transform .15s ease}.chip:hover{border-color:rgba(255,153,105,.55);color:#fff}.chip:active{transform:scale(.95)}.chip[aria-pressed=true]{background:#ff9969;border-color:#ff9969;color:#001b2b}.case{padding:34px 0 36px;border-top:1px solid hsla(0,0%,100%,.1)}.case-num{font:800 13px/1 Outfit,system-ui,sans-serif;letter-spacing:.1em;color:#ff9969}.case-title{font-family:Outfit,system-ui,sans-serif;font-weight:800;color:#fff;font-size:clamp(1.7rem,1.35rem + 1.3vw,2.35rem);line-height:1.08;letter-spacing:-.02em}.case-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;border-top:1px solid hsla(0,0%,100%,.1);padding-top:18px}.case-stats dd{font:800 clamp(1.05rem,.75rem + 1.6vw,1.3rem)/1.1 Outfit,system-ui,sans-serif;color:#fff;letter-spacing:-.01em}.case-stats dt{margin-top:5px;font-size:12px;line-height:1.35;color:#7a98ab}.rows{border-top:1px solid hsla(0,0%,100%,.1)}.row{display:grid;gap:10px;padding:26px 0;border-bottom:1px solid hsla(0,0%,100%,.1);transition:background-color .3s ease}.gallery{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin:0 -20px;padding:0 20px 6px;scroll-padding-inline:20px}.gallery::-webkit-scrollbar{display:none}.gallery figure{flex:0 0 auto;width:-moz-min-content;width:min-content;scroll-snap-align:start}.gallery img{display:block;height:180px;width:auto;max-width:none;border-radius:14px;border:1px solid hsla(0,0%,100%,.1);background:#002338}.gallery figcaption{margin-top:12px;font-size:13px;line-height:1.45;color:#93acbd}.gallery figcaption b{display:block;margin-bottom:2px;font-family:Outfit,system-ui,sans-serif;font-size:14px;font-weight:700;color:#fff}.more-btn{display:none}.cta-card{background:radial-gradient(ellipse 70% 90% at 100% 100%,rgba(255,153,105,.3),transparent 60%),radial-gradient(ellipse 50% 60% at 0 0,rgba(255,153,105,.1),transparent 70%),linear-gradient(135deg,#00324c,#002338 70%)}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}.pointer-events-none{pointer-events:none}.visible{visibility:visible}.absolute{position:absolute}.relative{position:relative}.-bottom-12{bottom:-3rem}.-right-16{right:-4rem}.-right-6{right:-1.5rem}.-top-20{top:-5rem}.col-span-2{grid-column:span 2/span 2}.mb-10{margin-bottom:2.5rem}.mb-12{margin-bottom:3rem}.mb-2{margin-bottom:.5rem}.mb-3{margin-bottom:.75rem}.mb-4{margin-bottom:1rem}.mb-5{margin-bottom:1.25rem}.mb-6{margin-bottom:1.5rem}.mb-7{margin-bottom:1.75rem}.mb-8{margin-bottom:2rem}.ml-1{margin-left:.25rem}.mt-1{margin-top:.25rem}.mt-1\.5{margin-top:.375rem}.mt-12{margin-top:3rem}.mt-2{margin-top:.5rem}.mt-20{margin-top:5rem}.mt-3{margin-top:.75rem}.mt-4{margin-top:1rem}.mt-5{margin-top:1.25rem}.mt-6{margin-top:1.5rem}.mt-7{margin-top:1.75rem}.mt-8{margin-top:2rem}.mt-9{margin-top:2.25rem}.mt-\[3px\]{margin-top:3px}.mt-\[9px\]{margin-top:9px}.mt-auto{margin-top:auto}.block{display:block}.inline-block{display:inline-block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-1\.5{height:.375rem}.h-11{height:2.75rem}.h-12{height:3rem}.h-16{height:4rem}.h-2{height:.5rem}.h-4{height:1rem}.h-48{height:12rem}.h-5{height:1.25rem}.h-52{height:13rem}.h-7{height:1.75rem}.h-\[26px\]{height:26px}.min-h-full{min-height:100%}.w-1\.5{width:.375rem}.w-2{width:.5rem}.w-4{width:1rem}.w-5{width:1.25rem}.w-auto{width:auto}.w-full{width:100%}.min-w-0{min-width:0}.max-w-2xl{max-width:42rem}.max-w-\[16rem\]{max-width:16rem}.max-w-\[34rem\]{max-width:34rem}.max-w-sm{max-width:24rem}.max-w-xl{max-width:36rem}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.grow{flex-grow:1}.rotate-45{--tw-rotate:45deg;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.resize{resize:both}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.flex-col{flex-direction:column}.flex-col-reverse{flex-direction:column-reverse}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-end{align-items:flex-end}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-10{gap:2.5rem}.gap-12{gap:3rem}.gap-14{gap:3.5rem}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.gap-5{gap:1.25rem}.gap-6{gap:1.5rem}.gap-7{gap:1.75rem}.gap-8{gap:2rem}.gap-9{gap:2.25rem}.gap-x-4{-moz-column-gap:1rem;column-gap:1rem}.gap-x-5{-moz-column-gap:1.25rem;column-gap:1.25rem}.gap-x-6{-moz-column-gap:1.5rem;column-gap:1.5rem}.gap-x-8{-moz-column-gap:2rem;column-gap:2rem}.gap-y-10{row-gap:2.5rem}.gap-y-2{row-gap:.5rem}.gap-y-3{row-gap:.75rem}.space-y-2\.5>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.625rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.625rem*var(--tw-space-y-reverse))}.space-y-3>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.75rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.75rem*var(--tw-space-y-reverse))}.space-y-6>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem*var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.break-all{word-break:break-all}.rounded-3xl{border-radius:1.5rem}.rounded-xl{border-radius:.75rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-brand\/25{border-color:rgba(255,153,105,.25)}.border-white\/10{border-color:hsla(0,0%,100%,.1)}.border-white\/\[\.07\]{border-color:hsla(0,0%,100%,.07)}.bg-brand{--tw-bg-opacity:1;background-color:rgb(255 153 105/var(--tw-bg-opacity,1))}.bg-navy-700\/50{background-color:rgba(0,50,76,.5)}.bg-navy-800{--tw-bg-opacity:1;background-color:rgb(0 35 56/var(--tw-bg-opacity,1))}.bg-navy-800\/75{background-color:rgba(0,35,56,.75)}.bg-navy-900{--tw-bg-opacity:1;background-color:rgb(0 27 43/var(--tw-bg-opacity,1))}.bg-navy-950{--tw-bg-opacity:1;background-color:rgb(0 19 31/var(--tw-bg-opacity,1))}.bg-navy-950\/50{background-color:rgba(0,19,31,.5)}.p-3{padding:.75rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-12{padding-top:3rem;padding-bottom:3rem}.py-14{padding-top:3.5rem;padding-bottom:3.5rem}.py-24{padding-top:6rem;padding-bottom:6rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-5{padding-top:1.25rem;padding-bottom:1.25rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.pb-10{padding-bottom:2.5rem}.pb-12{padding-bottom:3rem}.pb-14{padding-bottom:3.5rem}.pb-16{padding-bottom:4rem}.pb-5{padding-bottom:1.25rem}.pb-\[max\(28px\2c env\(safe-area-inset-bottom\)\)\]{padding-bottom:max(28px,env(safe-area-inset-bottom))}.pt-10{padding-top:2.5rem}.pt-12{padding-top:3rem}.pt-14{padding-top:3.5rem}.pt-16{padding-top:4rem}.pt-4{padding-top:1rem}.pt-6{padding-top:1.5rem}.pt-8{padding-top:2rem}.text-center{text-align:center}.font-display{font-family:Outfit,system-ui,sans-serif}.font-sans{font-family:Inter,system-ui,sans-serif}.text-\[\.55em\]{font-size:.55em}.text-\[\.6em\]{font-size:.6em}.text-\[1\.05rem\]{font-size:1.05rem}.text-\[1\.3rem\]{font-size:1.3rem}.text-\[1\.6rem\]{font-size:1.6rem}.text-\[1\.75rem\]{font-size:1.75rem}.text-\[1\.9rem\]{font-size:1.9rem}.text-\[10\.5px\]{font-size:10.5px}.text-\[11px\]{font-size:11px}.text-\[12\.5px\]{font-size:12.5px}.text-\[12px\]{font-size:12px}.text-\[13\.5px\]{font-size:13.5px}.text-\[13px\]{font-size:13px}.text-\[15\.5px\]{font-size:15.5px}.text-\[15px\]{font-size:15px}.text-\[16\.5px\]{font-size:16.5px}.text-\[16px\]{font-size:16px}.text-\[17px\]{font-size:17px}.text-\[2\.4rem\]{font-size:2.4rem}.text-\[8\.5px\]{font-size:8.5px}.text-\[9px\]{font-size:9px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:.75rem;line-height:1rem}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-none{line-height:1}.leading-relaxed{line-height:1.625}.leading-snug{line-height:1.375}.tracking-\[-\.01em\]{letter-spacing:-.01em}.tracking-\[-\.03em\]{letter-spacing:-.03em}.tracking-\[\.07em\]{letter-spacing:.07em}.tracking-\[\.16em\]{letter-spacing:.16em}.tracking-\[\.22em\]{letter-spacing:.22em}.tracking-\[\.2em\]{letter-spacing:.2em}.tracking-\[\.44em\]{letter-spacing:.44em}.tracking-tight{letter-spacing:-.025em}.text-brand{--tw-text-opacity:1;color:rgb(255 153 105/var(--tw-text-opacity,1))}.text-brand\/70{color:rgba(255,153,105,.7)}.text-brand\/\[\.10\]{color:rgba(255,153,105,.1)}.text-mist-200{--tw-text-opacity:1;color:rgb(220 231 238/var(--tw-text-opacity,1))}.text-mist-400{--tw-text-opacity:1;color:rgb(175 198 212/var(--tw-text-opacity,1))}.text-mist-500{--tw-text-opacity:1;color:rgb(147 172 189/var(--tw-text-opacity,1))}.text-mist-600{--tw-text-opacity:1;color:rgb(122 152 171/var(--tw-text-opacity,1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.text-white\/\[\.04\]{color:hsla(0,0%,100%,.04)}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.opacity-70{opacity:.7}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgba(0,0,0,.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.shadow-black\/40{--tw-shadow-color:rgba(0,0,0,.4);--tw-shadow:var(--tw-shadow-colored)}.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-colors{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}@media (min-width:640px){.svc-grid{grid-template-columns:1fr 1fr}.svc:nth-child(odd){padding-right:32px;border-right:1px solid hsla(0,0%,100%,.1)}.svc:nth-child(2n){padding-left:32px}.feat-scroller{grid-template-columns:1fr 1fr;gap:18px}.feat-scroller>:first-child{grid-column:1/-1}.feat{padding:32px}.gallery{margin:0 -32px;padding:0 32px 6px;scroll-padding-inline:32px}.gallery img{height:250px}}@media (min-width:768px){.steps{grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}.step{padding:60px 0 0}.step:before{left:52px;right:-28px;top:18px;bottom:auto;width:auto;height:1px}}@media (min-width:1024px){.mobile-menu{display:none}.feat-scroller{grid-template-columns:1.2fr 1fr;gap:20px}.feat-scroller>:first-child{grid-column:auto;grid-row:span 2}.feat{padding:36px}.chips-scroll{-webkit-mask-image:none;mask-image:none}.case{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:72px;padding:60px 0}.row{grid-template-columns:minmax(0,4fr) minmax(0,6fr) minmax(0,2.4fr);gap:40px;padding:34px 0;align-items:start}.row:hover{background-color:hsla(0,0%,100%,.02)}.gallery{margin:0 calc(50% - 50vw) 0 0;padding:0 32px 6px 0;scroll-padding-inline:0}.gallery img{height:300px}.case[id]{scroll-margin-top:calc(var(--hdr) + 90px)}}@media (max-width:1023.98px){.case[id]{scroll-margin-top:calc(var(--hdr) + 76px)}}.site-header.is-scrolled{background:rgba(0,27,43,.9);border-bottom-color:hsla(0,0%,100%,.08);box-shadow:0 12px 30px -20px rgba(0,0,0,.9)}html.menu-open{overflow:hidden}.menu-open .site-header{background:#001b2b;border-bottom-color:hsla(0,0%,100%,.08)}.menu-open .mobile-menu{visibility:visible;transition:opacity .28s ease,transform .35s var(--ease)}.menu-open .mm-link,.menu-open .mobile-menu{opacity:1;transform:none}.menu-open .mm-list li:first-child .mm-link{transition-delay:.05s}.menu-open .mm-list li:nth-child(2) .mm-link{transition-delay:.1s}.menu-open .mm-list li:nth-child(3) .mm-link{transition-delay:.15s}.menu-open .mm-list li:nth-child(4) .mm-link{transition-delay:.2s}.menu-open .menu-btn span:first-child{top:21px;transform:rotate(45deg)}.menu-open .menu-btn span:nth-child(2){opacity:0}.menu-open .menu-btn span:nth-child(3){top:21px;transform:rotate(-45deg)}@media (max-width:1023.98px){.js .collapsible:not(.is-open) .more-content{display:none}.js .more-btn{display:inline-flex;align-items:center;gap:6px;margin-top:6px;padding:11px 0;min-height:44px;font-size:14px;font-weight:700;color:#ff9969}.js .more-btn svg{transition:transform .3s var(--ease)}.js .collapsible.is-open .more-btn svg{transform:rotate(180deg)}}@keyframes glowDrift{0%,to{transform:translate(0) scale(1)}50%{transform:translate(-50px,46px) scale(1.12)}}@keyframes revealUp{0%{opacity:0;translate:0 24px}to{opacity:1;translate:0 0}}@keyframes popIn{0%{opacity:0;translate:0 12px}to{opacity:1;translate:0 0}}@keyframes propSpin{0%{transform:rotateY(-1turn)}to{transform:rotateY(0)}}.logo-link{perspective:700px}.logo-mark{transition:transform .9s cubic-bezier(.3,1.05,.4,1)}.js .logo-mark{animation:propSpin 1.15s cubic-bezier(.25,.9,.3,1) .15s backwards}.logo-link:focus-visible .logo-mark,.logo-link:hover .logo-mark{transform:rotateY(1turn)}.arrow{transition:transform .28s var(--ease)}a:hover .arrow,button:hover .arrow{transform:translateX(4px)}.js .hero-stagger>*{animation:revealUp .9s var(--ease) both}.js .hero-stagger>:first-child{animation-delay:.08s}.js .hero-stagger>:nth-child(2){animation-delay:.16s}.js .hero-stagger>:nth-child(3){animation-delay:.24s}.js .hero-stagger>:nth-child(4){animation-delay:.32s}.js .hero-stagger>:nth-child(5){animation-delay:.4s}.js .hero-panel{animation:revealUp 1s var(--ease) .3s both}.js .reveal,.js .stagger>*{opacity:0}.js .reveal.is-in,.js .stagger.is-in>*{animation:revealUp .8s var(--ease) both}.js .stagger.is-in>:nth-child(2){animation-delay:.07s}.js .stagger.is-in>:nth-child(3){animation-delay:.14s}.js .stagger.is-in>:nth-child(4){animation-delay:.21s}.js .stagger.is-in>:nth-child(5){animation-delay:.28s}.js .stagger.is-in>:nth-child(6){animation-delay:.35s}.js .stagger.is-in>:nth-child(7){animation-delay:.42s}.js .stagger.is-in>:nth-child(8){animation-delay:.49s}.js .stagger.is-in>:nth-child(n+9){animation-delay:.56s}.js .filter-enter,.js .reveal.is-in.filter-enter,.js .stagger.is-in>.filter-enter{animation:popIn .45s var(--ease) both}[data-count]{font-variant-numeric:tabular-nums}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,:after,:before{animation-duration:.001ms!important;animation-delay:0s!important;animation-iteration-count:1!important;transition-duration:.001ms!important;transition-delay:0s!important}.js .hero-panel,.js .hero-stagger>*,.js .reveal,.js .stagger>*{opacity:1!important;translate:none!important}}.hover\:border-brand\/40:hover{border-color:rgba(255,153,105,.4)}.hover\:text-brand:hover{--tw-text-opacity:1;color:rgb(255 153 105/var(--tw-text-opacity,1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.focus\:not-sr-only:focus{position:static;width:auto;height:auto;padding:0;margin:0;overflow:visible;clip:auto;white-space:normal}.focus\:fixed:focus{position:fixed}.focus\:left-4:focus{left:1rem}.focus\:top-4:focus{top:1rem}.focus\:z-\[60\]:focus{z-index:60}.focus\:rounded-lg:focus{border-radius:.5rem}.focus\:bg-brand:focus{--tw-bg-opacity:1;background-color:rgb(255 153 105/var(--tw-bg-opacity,1))}.focus\:px-4:focus{padding-left:1rem;padding-right:1rem}.focus\:py-2:focus{padding-top:.5rem;padding-bottom:.5rem}.focus\:font-semibold:focus{font-weight:600}.focus\:text-navy-900:focus{--tw-text-opacity:1;color:rgb(0 27 43/var(--tw-text-opacity,1))}.group:hover .group-hover\:text-brand{--tw-text-opacity:1;color:rgb(255 153 105/var(--tw-text-opacity,1))}.group:hover .group-hover\:text-brand-400{--tw-text-opacity:1;color:rgb(255 178 139/var(--tw-text-opacity,1))}@media (min-width:360px){.min-\[360px\]\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.min-\[360px\]\:p-4{padding:1rem}.min-\[360px\]\:p-5{padding:1.25rem}.min-\[360px\]\:text-\[1\.05rem\]{font-size:1.05rem}.min-\[360px\]\:text-\[2\.1rem\]{font-size:2.1rem}}@media (min-width:640px){.sm\:mt-5{margin-top:1.25rem}.sm\:block{display:block}.sm\:inline{display:inline}.sm\:inline-flex{display:inline-flex}.sm\:hidden{display:none}.sm\:h-72{height:18rem}.sm\:w-auto{width:auto}.sm\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.sm\:flex-row{flex-direction:row}.sm\:items-center{align-items:center}.sm\:justify-start{justify-content:flex-start}.sm\:justify-between{justify-content:space-between}.sm\:gap-8{gap:2rem}.sm\:gap-x-8{-moz-column-gap:2rem;column-gap:2rem}.sm\:p-5{padding:1.25rem}.sm\:p-6{padding:1.5rem}.sm\:p-7{padding:1.75rem}.sm\:px-12{padding-left:3rem;padding-right:3rem}.sm\:py-16{padding-top:4rem;padding-bottom:4rem}.sm\:pb-14{padding-bottom:3.5rem}.sm\:pb-16{padding-bottom:4rem}.sm\:pt-16{padding-top:4rem}.sm\:pt-20{padding-top:5rem}.sm\:pt-24{padding-top:6rem}.sm\:text-3xl{font-size:1.875rem;line-height:2.25rem}.sm\:text-\[1\.4rem\]{font-size:1.4rem}.sm\:text-\[16px\]{font-size:16px}.sm\:text-\[2\.4rem\]{font-size:2.4rem}.sm\:text-\[2\.6rem\]{font-size:2.6rem}.sm\:text-base{font-size:1rem;line-height:1.5rem}.sm\:text-lg{font-size:1.125rem;line-height:1.75rem}}@media (min-width:768px){.md\:col-span-3{grid-column:span 3/span 3}.md\:col-span-5{grid-column:span 5/span 5}.md\:col-start-7{grid-column-start:7}.md\:grid-cols-12{grid-template-columns:repeat(12,minmax(0,1fr))}}@media (min-width:1024px){.lg\:not-sr-only{position:static;width:auto;height:auto;padding:0;margin:0;overflow:visible;clip:auto;white-space:normal}.lg\:sticky{position:sticky}.lg\:-bottom-16{bottom:-4rem}.lg\:right-6{right:1.5rem}.lg\:top-32{top:8rem}.lg\:col-span-3{grid-column:span 3/span 3}.lg\:col-span-4{grid-column:span 4/span 4}.lg\:col-span-5{grid-column:span 5/span 5}.lg\:col-span-6{grid-column:span 6/span 6}.lg\:col-span-7{grid-column:span 7/span 7}.lg\:col-span-8{grid-column:span 8/span 8}.lg\:col-span-9{grid-column:span 9/span 9}.lg\:col-start-8{grid-column-start:8}.lg\:mb-14{margin-bottom:3.5rem}.lg\:mb-16{margin-bottom:4rem}.lg\:mb-4{margin-bottom:1rem}.lg\:mt-0{margin-top:0}.lg\:mt-1{margin-top:.25rem}.lg\:mt-28{margin-top:7rem}.lg\:block{display:block}.lg\:flex{display:flex}.lg\:inline-flex{display:inline-flex}.lg\:hidden{display:none}.lg\:h-20{height:5rem}.lg\:h-7{height:1.75rem}.lg\:h-\[24rem\]{height:24rem}.lg\:min-h-\[calc\(100svh-80px-86px\)\]{min-height:calc(100svh - 166px)}.lg\:w-16{width:4rem}.lg\:flex-1{flex:1 1 0%}.lg\:grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}.lg\:grid-cols-12{grid-template-columns:repeat(12,minmax(0,1fr))}.lg\:flex-row{flex-direction:row}.lg\:flex-row-reverse{flex-direction:row-reverse}.lg\:flex-col{flex-direction:column}.lg\:items-end{align-items:flex-end}.lg\:items-center{align-items:center}.lg\:items-baseline{align-items:baseline}.lg\:justify-end{justify-content:flex-end}.lg\:justify-between{justify-content:space-between}.lg\:gap-10{gap:2.5rem}.lg\:gap-12{gap:3rem}.lg\:gap-14{gap:3.5rem}.lg\:gap-16{gap:4rem}.lg\:gap-4{gap:1rem}.lg\:p-6{padding:1.5rem}.lg\:px-16{padding-left:4rem;padding-right:4rem}.lg\:px-6{padding-left:1.5rem;padding-right:1.5rem}.lg\:py-16{padding-top:4rem;padding-bottom:4rem}.lg\:py-20{padding-top:5rem;padding-bottom:5rem}.lg\:py-7{padding-top:1.75rem;padding-bottom:1.75rem}.lg\:pb-16{padding-bottom:4rem}.lg\:pb-20{padding-bottom:5rem}.lg\:pb-24{padding-bottom:6rem}.lg\:pr-4{padding-right:1rem}.lg\:pt-24{padding-top:6rem}.lg\:pt-28{padding-top:7rem}.lg\:pt-4{padding-top:1rem}.lg\:text-right{text-align:right}.lg\:text-\[1\.55rem\]{font-size:1.55rem}.lg\:text-\[17px\]{font-size:17px}.lg\:text-\[2\.15rem\]{font-size:2.15rem}.lg\:text-\[2rem\]{font-size:2rem}.lg\:text-\[9px\]{font-size:9px}.lg\:text-lg{font-size:1.125rem;line-height:1.75rem}.lg\:text-sm{font-size:.875rem;line-height:1.25rem}}@media (min-width:1280px){.xl\:p-7{padding:1.75rem}.xl\:text-\[2\.6rem\]{font-size:2.6rem}}</style>
 </head>
-<body class="bg-canvas bg-navy-900 font-sans text-mist antialiased">
+<body class="bg-navy-900 font-sans antialiased">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="pm" viewBox="0 0 572.6 436"><path d="M1.0 0.3 L5.8 0.0 L13.3 2.6 L25.8 4.0 L31.8 6.6 L84.3 16.0 L113.8 23.0 L122.3 23.6 L130.3 26.0 L142.3 27.6 L151.3 30.6 L162.3 31.6 L168.8 34.0 L181.8 35.6 L190.8 38.6 L201.8 39.6 L210.8 42.6 L221.8 43.6 L230.8 46.6 L241.8 47.6 L247.3 50.0 L262.8 52.0 L271.8 55.0 L294.3 58.0 L439.3 59.0 L442.8 60.6 L488.3 60.6 L493.8 62.0 L520.3 62.0 L526.3 63.0 L535.3 67.6 L545.3 75.6 L560.0 93.8 L565.0 105.3 L568.6 110.3 L572.6 122.3 L572.6 127.3 L569.3 129.6 L561.8 127.0 L549.3 126.0 L540.3 123.0 L530.8 122.6 L516.8 119.0 L504.8 118.0 L497.8 115.6 L482.3 114.0 L475.8 111.6 L462.3 110.6 L456.3 108.0 L441.3 106.6 L431.8 103.6 L418.8 102.6 L410.3 99.6 L394.8 98.0 L388.3 95.6 L374.8 94.6 L362.8 91.0 L350.3 90.0 L342.8 87.6 L332.8 87.0 L320.3 83.6 L307.8 82.0 L303.0 82.8 L302.6 86.8 L305.6 94.8 L307.0 108.8 L309.0 112.8 L311.0 128.3 L312.3 129.6 L334.8 131.6 L340.8 134.0 L351.8 135.0 L357.3 138.0 L363.8 139.0 L381.8 147.6 L383.3 149.6 L388.3 151.0 L390.3 153.6 L394.3 155.0 L404.8 162.6 L418.6 175.3 L432.6 191.3 L438.0 201.3 L441.0 204.3 L446.6 216.8 L449.0 219.8 L450.0 224.8 L453.0 229.3 L457.0 241.3 L461.6 263.3 L461.6 304.8 L458.0 317.3 L457.0 325.8 L454.0 331.8 L453.0 337.8 L437.0 368.3 L434.0 370.8 L429.0 379.3 L412.8 396.0 L397.8 408.0 L394.8 409.0 L392.3 412.0 L387.8 413.6 L377.8 420.0 L373.3 421.0 L369.3 424.0 L364.3 425.0 L359.3 428.0 L352.8 429.0 L347.8 431.6 L333.8 433.0 L327.8 435.0 L298.8 436.0 L272.8 432.0 L248.8 424.0 L245.8 421.6 L232.8 416.0 L223.8 409.0 L219.8 407.6 L210.8 400.0 L187.6 375.8 L175.6 356.8 L174.6 352.8 L172.0 350.3 L170.6 344.3 L167.6 339.8 L166.6 334.3 L163.6 329.3 L162.6 321.8 L159.6 314.8 L158.0 298.3 L156.6 294.8 L156.6 270.8 L158.6 263.8 L160.0 248.3 L167.6 224.8 L170.0 221.8 L171.6 215.8 L174.0 213.3 L179.0 202.3 L196.0 179.8 L219.3 159.0 L229.8 153.6 L231.3 151.6 L236.8 149.6 L239.3 147.0 L253.3 141.6 L256.8 139.0 L263.3 138.0 L269.3 135.0 L281.8 133.6 L286.0 129.8 L276.6 81.8 L273.8 79.0 L265.3 77.6 L212.3 77.6 L208.3 76.0 L49.8 74.0 L47.3 72.0 L41.3 70.6 L33.3 64.0 L16.6 44.3 L4.6 20.8 L0.0 6.8 L1.0 0.3 Z M301.3 205.6 L291.8 206.6 L280.3 211.0 L264.3 222.6 L255.0 233.8 L247.6 248.8 L243.6 262.8 L242.6 272.3 L243.0 300.8 L248.0 318.8 L250.0 320.8 L252.0 326.8 L259.6 338.3 L269.8 348.0 L282.8 356.0 L294.8 360.0 L320.8 360.6 L336.8 356.0 L344.8 351.6 L353.8 344.6 L364.6 331.8 L372.6 314.8 L374.6 302.3 L377.0 295.3 L377.6 276.3 L376.6 266.8 L369.6 243.3 L364.6 234.3 L355.8 223.0 L344.8 214.6 L326.3 206.6 L301.3 205.6 Z"/></symbol></svg>
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-brand focus:px-4 focus:py-2 focus:font-semibold focus:text-navy-900">Skip to content</a>
 
-<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-brand focus:px-4 focus:py-2 focus:font-semibold focus:text-navy-900">Skip to content</a>
-
-<!-- ================= HEADER ================= -->
-<header class="sticky top-0 z-50 border-b border-white/10 bg-navy-900/85 backdrop-blur-xl">
-  <nav class="mx-auto flex h-20 max-w-7xl items-center justify-between px-6" aria-label="Main">
-    <a href="index.html" class="logo-link flex items-center gap-3" aria-label="Propeler Centar — home">
-      <svg viewBox="0 0 572.6 436" class="logo-mark h-7 w-auto text-brand" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M1.0 0.3 L5.8 0.0 L13.3 2.6 L25.8 4.0 L31.8 6.6 L84.3 16.0 L113.8 23.0 L122.3 23.6 L130.3 26.0 L142.3 27.6 L151.3 30.6 L162.3 31.6 L168.8 34.0 L181.8 35.6 L190.8 38.6 L201.8 39.6 L210.8 42.6 L221.8 43.6 L230.8 46.6 L241.8 47.6 L247.3 50.0 L262.8 52.0 L271.8 55.0 L294.3 58.0 L439.3 59.0 L442.8 60.6 L488.3 60.6 L493.8 62.0 L520.3 62.0 L526.3 63.0 L535.3 67.6 L545.3 75.6 L560.0 93.8 L565.0 105.3 L568.6 110.3 L572.6 122.3 L572.6 127.3 L569.3 129.6 L561.8 127.0 L549.3 126.0 L540.3 123.0 L530.8 122.6 L516.8 119.0 L504.8 118.0 L497.8 115.6 L482.3 114.0 L475.8 111.6 L462.3 110.6 L456.3 108.0 L441.3 106.6 L431.8 103.6 L418.8 102.6 L410.3 99.6 L394.8 98.0 L388.3 95.6 L374.8 94.6 L362.8 91.0 L350.3 90.0 L342.8 87.6 L332.8 87.0 L320.3 83.6 L307.8 82.0 L303.0 82.8 L302.6 86.8 L305.6 94.8 L307.0 108.8 L309.0 112.8 L311.0 128.3 L312.3 129.6 L334.8 131.6 L340.8 134.0 L351.8 135.0 L357.3 138.0 L363.8 139.0 L381.8 147.6 L383.3 149.6 L388.3 151.0 L390.3 153.6 L394.3 155.0 L404.8 162.6 L418.6 175.3 L432.6 191.3 L438.0 201.3 L441.0 204.3 L446.6 216.8 L449.0 219.8 L450.0 224.8 L453.0 229.3 L457.0 241.3 L461.6 263.3 L461.6 304.8 L458.0 317.3 L457.0 325.8 L454.0 331.8 L453.0 337.8 L437.0 368.3 L434.0 370.8 L429.0 379.3 L412.8 396.0 L397.8 408.0 L394.8 409.0 L392.3 412.0 L387.8 413.6 L377.8 420.0 L373.3 421.0 L369.3 424.0 L364.3 425.0 L359.3 428.0 L352.8 429.0 L347.8 431.6 L333.8 433.0 L327.8 435.0 L298.8 436.0 L272.8 432.0 L248.8 424.0 L245.8 421.6 L232.8 416.0 L223.8 409.0 L219.8 407.6 L210.8 400.0 L187.6 375.8 L175.6 356.8 L174.6 352.8 L172.0 350.3 L170.6 344.3 L167.6 339.8 L166.6 334.3 L163.6 329.3 L162.6 321.8 L159.6 314.8 L158.0 298.3 L156.6 294.8 L156.6 270.8 L158.6 263.8 L160.0 248.3 L167.6 224.8 L170.0 221.8 L171.6 215.8 L174.0 213.3 L179.0 202.3 L196.0 179.8 L219.3 159.0 L229.8 153.6 L231.3 151.6 L236.8 149.6 L239.3 147.0 L253.3 141.6 L256.8 139.0 L263.3 138.0 L269.3 135.0 L281.8 133.6 L286.0 129.8 L276.6 81.8 L273.8 79.0 L265.3 77.6 L212.3 77.6 L208.3 76.0 L49.8 74.0 L47.3 72.0 L41.3 70.6 L33.3 64.0 L16.6 44.3 L4.6 20.8 L0.0 6.8 L1.0 0.3 Z M301.3 205.6 L291.8 206.6 L280.3 211.0 L264.3 222.6 L255.0 233.8 L247.6 248.8 L243.6 262.8 L242.6 272.3 L243.0 300.8 L248.0 318.8 L250.0 320.8 L252.0 326.8 L259.6 338.3 L269.8 348.0 L282.8 356.0 L294.8 360.0 L320.8 360.6 L336.8 356.0 L344.8 351.6 L353.8 344.6 L364.6 331.8 L372.6 314.8 L374.6 302.3 L377.0 295.3 L377.6 276.3 L376.6 266.8 L369.6 243.3 L364.6 234.3 L355.8 223.0 L344.8 214.6 L326.3 206.6 L301.3 205.6 Z"/></svg>
+<header id="site-header" class="site-header">
+  <div class="wrap flex h-16 items-center justify-between lg:h-20">
+    <a href="index.html" class="logo-link flex items-center gap-3" aria-label="Propeler Centar home">
+      <svg viewBox="0 0 572.6 436" class="logo-mark h-[26px] w-auto text-brand lg:h-7" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><use href="#pm"/></svg>
       <span class="leading-none">
-        <span class="block font-display text-[17px] font-extrabold tracking-[.06em] text-white">PROPELER</span>
-        <span class="mt-[3px] block font-display text-[9px] font-medium tracking-[.42em] text-brand">CENTAR</span>
+        <span class="block font-display text-[16px] font-extrabold tracking-[.07em] text-white lg:text-[17px]">PROPELER</span>
+        <span class="mt-[3px] block font-display text-[8.5px] font-medium tracking-[.44em] text-brand lg:text-[9px]">CENTAR</span>
       </span>
     </a>
 
-    <div class="hidden items-center gap-8 text-sm font-semibold lg:flex">
-      <a href="index.html" class="nav-link text-mist-400 transition-colors hover:text-white">Home</a>
-      <a href="index.html#services" class="nav-link text-mist-400 transition-colors hover:text-white">What we do</a>
-      <a href="projekti.html" class="nav-link text-brand" aria-current="page">Selected work</a>
-      <a href="o-nama.html" class="nav-link text-mist-400 transition-colors hover:text-white">About</a>
-    </div>
+    <nav class="hidden items-center gap-9 lg:flex" aria-label="Main">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="index.html#services" class="nav-link">What we do</a>
+      <a href="projekti.html" class="nav-link" aria-current="page">Selected work</a>
+      <a href="o-nama.html" class="nav-link">About</a>
+    </nav>
 
-    <div class="flex items-center gap-3">
-      <a href="mailto:office@propeler.io" class="btn-primary hidden rounded-xl bg-brand px-5 py-2.5 text-sm font-bold text-navy-900 sm:inline-flex">Email us</a>
-      <button id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" class="rounded-lg p-2 text-mist-200 hover:bg-white/5 lg:hidden">
-        <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+    <div class="flex items-center gap-2">
+      <a href="mailto:office@propeler.io" class="btn btn-primary hidden h-11 px-5 text-sm sm:inline-flex">
+        Email us
+        <svg class="arrow h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
+      </a>
+      <button id="menu-btn" type="button" class="menu-btn lg:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
       </button>
-    </div>
-  </nav>
-
-  <div id="mobile-menu" class="hidden border-t border-white/10 bg-navy-900 px-6 py-5 lg:hidden">
-    <div class="flex flex-col gap-4 text-sm font-semibold">
-      <a href="index.html" class="text-mist-200">Home</a>
-      <a href="index.html#services" class="text-mist-200">What we do</a>
-      <a href="projekti.html" class="text-brand">Selected work</a>
-      <a href="o-nama.html" class="text-mist-200">About</a>
-      <a href="mailto:office@propeler.io" class="rounded-xl bg-brand px-5 py-3 text-center font-bold text-navy-900">office@propeler.io</a>
     </div>
   </div>
 </header>
 
+<div id="mobile-menu" class="mobile-menu lg:hidden">
+  <nav class="wrap flex min-h-full flex-col pb-[max(28px,env(safe-area-inset-bottom))] pt-4" aria-label="Mobile">
+    <ul class="mm-list">
+      <li><a href="index.html" class="mm-link"><span class="mm-num">01</span>Home<svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li>
+      <li><a href="index.html#services" class="mm-link"><span class="mm-num">02</span>What we do<svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li>
+      <li><a href="projekti.html" class="mm-link" aria-current="page"><span class="mm-num">03</span>Selected work<svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li>
+      <li><a href="o-nama.html" class="mm-link"><span class="mm-num">04</span>About<svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li>
+    </ul>
+
+    <div class="mt-auto pt-10">
+      <p class="mb-4 text-[11px] font-bold uppercase tracking-[.2em] text-mist-600">Start a conversation</p>
+      <a href="mailto:office@propeler.io" class="btn btn-primary btn-lg w-full">office@propeler.io</a>
+      <div class="mt-5 flex items-center justify-between text-sm font-semibold">
+        <a href="https://www.linkedin.com/company/propeler-centar/" target="_blank" rel="noopener" class="text-mist-400 hover:text-white">LinkedIn ↗</a>
+        <span class="text-mist-600">Belgrade, Serbia</span>
+      </div>
+    </div>
+  </nav>
+</div>
+
 <main id="main">
 
-  <!-- ================= PAGE HERO ================= -->
-  <section class="relative overflow-hidden px-6 pb-14 pt-20 sm:pt-28">
-    <svg viewBox="0 0 572.6 436" class="pointer-events-none absolute -right-24 -top-8 h-80 w-auto text-white/[.03]" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M1.0 0.3 L5.8 0.0 L13.3 2.6 L25.8 4.0 L31.8 6.6 L84.3 16.0 L113.8 23.0 L122.3 23.6 L130.3 26.0 L142.3 27.6 L151.3 30.6 L162.3 31.6 L168.8 34.0 L181.8 35.6 L190.8 38.6 L201.8 39.6 L210.8 42.6 L221.8 43.6 L230.8 46.6 L241.8 47.6 L247.3 50.0 L262.8 52.0 L271.8 55.0 L294.3 58.0 L439.3 59.0 L442.8 60.6 L488.3 60.6 L493.8 62.0 L520.3 62.0 L526.3 63.0 L535.3 67.6 L545.3 75.6 L560.0 93.8 L565.0 105.3 L568.6 110.3 L572.6 122.3 L572.6 127.3 L569.3 129.6 L561.8 127.0 L549.3 126.0 L540.3 123.0 L530.8 122.6 L516.8 119.0 L504.8 118.0 L497.8 115.6 L482.3 114.0 L475.8 111.6 L462.3 110.6 L456.3 108.0 L441.3 106.6 L431.8 103.6 L418.8 102.6 L410.3 99.6 L394.8 98.0 L388.3 95.6 L374.8 94.6 L362.8 91.0 L350.3 90.0 L342.8 87.6 L332.8 87.0 L320.3 83.6 L307.8 82.0 L303.0 82.8 L302.6 86.8 L305.6 94.8 L307.0 108.8 L309.0 112.8 L311.0 128.3 L312.3 129.6 L334.8 131.6 L340.8 134.0 L351.8 135.0 L357.3 138.0 L363.8 139.0 L381.8 147.6 L383.3 149.6 L388.3 151.0 L390.3 153.6 L394.3 155.0 L404.8 162.6 L418.6 175.3 L432.6 191.3 L438.0 201.3 L441.0 204.3 L446.6 216.8 L449.0 219.8 L450.0 224.8 L453.0 229.3 L457.0 241.3 L461.6 263.3 L461.6 304.8 L458.0 317.3 L457.0 325.8 L454.0 331.8 L453.0 337.8 L437.0 368.3 L434.0 370.8 L429.0 379.3 L412.8 396.0 L397.8 408.0 L394.8 409.0 L392.3 412.0 L387.8 413.6 L377.8 420.0 L373.3 421.0 L369.3 424.0 L364.3 425.0 L359.3 428.0 L352.8 429.0 L347.8 431.6 L333.8 433.0 L327.8 435.0 L298.8 436.0 L272.8 432.0 L248.8 424.0 L245.8 421.6 L232.8 416.0 L223.8 409.0 L219.8 407.6 L210.8 400.0 L187.6 375.8 L175.6 356.8 L174.6 352.8 L172.0 350.3 L170.6 344.3 L167.6 339.8 L166.6 334.3 L163.6 329.3 L162.6 321.8 L159.6 314.8 L158.0 298.3 L156.6 294.8 L156.6 270.8 L158.6 263.8 L160.0 248.3 L167.6 224.8 L170.0 221.8 L171.6 215.8 L174.0 213.3 L179.0 202.3 L196.0 179.8 L219.3 159.0 L229.8 153.6 L231.3 151.6 L236.8 149.6 L239.3 147.0 L253.3 141.6 L256.8 139.0 L263.3 138.0 L269.3 135.0 L281.8 133.6 L286.0 129.8 L276.6 81.8 L273.8 79.0 L265.3 77.6 L212.3 77.6 L208.3 76.0 L49.8 74.0 L47.3 72.0 L41.3 70.6 L33.3 64.0 L16.6 44.3 L4.6 20.8 L0.0 6.8 L1.0 0.3 Z M301.3 205.6 L291.8 206.6 L280.3 211.0 L264.3 222.6 L255.0 233.8 L247.6 248.8 L243.6 262.8 L242.6 272.3 L243.0 300.8 L248.0 318.8 L250.0 320.8 L252.0 326.8 L259.6 338.3 L269.8 348.0 L282.8 356.0 L294.8 360.0 L320.8 360.6 L336.8 356.0 L344.8 351.6 L353.8 344.6 L364.6 331.8 L372.6 314.8 L374.6 302.3 L377.0 295.3 L377.6 276.3 L376.6 266.8 L369.6 243.3 L364.6 234.3 L355.8 223.0 L344.8 214.6 L326.3 206.6 L301.3 205.6 Z"/></svg>
-
-    <div class="hero-stagger relative mx-auto max-w-7xl">
-      <p class="mb-5 text-[11px] font-bold uppercase tracking-[.22em] text-brand">Selected work</p>
-      <h1 class="mb-8 max-w-4xl font-display text-4xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-5xl xl:text-[3.6rem]">
-        National systems, acquired platforms, <span class="text-brand">real migrations.</span>
-      </h1>
-      <p class="max-w-2xl text-base leading-relaxed text-mist-600 sm:text-lg">
-        A snapshot of the range of problems we've tackled — from national infrastructure for the Ministry of Interior to our own startups and quick proofs of concept.
-      </p>
-    </div>
-  </section>
-
-  <!-- ================= FILTER ================= -->
-  <section class="sticky top-20 z-40 border-y border-white/10 bg-navy-900/90 px-6 py-4 backdrop-blur-xl">
-    <div class="mx-auto flex max-w-7xl items-center gap-4">
-      <div class="hide-scrollbar flex items-center gap-2 overflow-x-auto" role="group" aria-label="Filter projects by domain">
-        <button type="button" class="chip shrink-0 rounded-full border border-white/15 px-4 py-2 text-xs font-bold text-mist-200" data-filter="all" aria-pressed="true">All</button>
-        <button type="button" class="chip shrink-0 rounded-full border border-white/15 px-4 py-2 text-xs font-bold text-mist-200" data-filter="ai" aria-pressed="false">AI &amp; Computer Vision</button>
-        <button type="button" class="chip shrink-0 rounded-full border border-white/15 px-4 py-2 text-xs font-bold text-mist-200" data-filter="data" aria-pressed="false">Data</button>
-        <button type="button" class="chip shrink-0 rounded-full border border-white/15 px-4 py-2 text-xs font-bold text-mist-200" data-filter="software" aria-pressed="false">Software</button>
-        <button type="button" class="chip shrink-0 rounded-full border border-white/15 px-4 py-2 text-xs font-bold text-mist-200" data-filter="public" aria-pressed="false">Public sector</button>
-      </div>
-      <p id="filter-count" role="status" class="ml-auto hidden whitespace-nowrap text-xs font-semibold text-mist-600 lg:block">14 projects</p>
-    </div>
-  </section>
-
-  <!-- ================= FLAGSHIP CASE STUDIES ================= -->
-  <section id="flagship" class="px-6 py-20 sm:py-24">
-    <div class="mx-auto max-w-7xl">
-      <h2 class="mb-12 font-display text-2xl font-extrabold text-white sm:text-3xl">Flagship case studies</h2>
-
-      <div class="stagger space-y-5">
-
-        <!-- 01 DTech -->
-        <article id="dtech" class="case rounded-2xl border border-white/10 bg-navy-800/50 p-8 sm:p-10" data-tags="software data">
-          <div class="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,17rem)_1fr] lg:gap-14">
-            <div>
-              <p class="mb-5 font-display text-sm font-bold text-brand/70">01</p>
-              <h3 class="mb-4 font-display text-2xl font-extrabold leading-snug text-white">DTech</h3>
-              <p class="mb-5 text-sm font-semibold text-mist-200">Pension Fund Management SaaS Platform</p>
-              <ul class="flex flex-wrap gap-2">
-                <li class="rounded-md bg-brand/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[.14em] text-brand">FinTech</li>
-                <li class="rounded-md bg-brand/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[.14em] text-brand">SaaS</li>
-              </ul>
-            </div>
-            <div>
-              <p class="mb-6 text-base leading-relaxed text-mist-400">
-                We built the DTech platform from the ground up — a flexible SaaS product handling fund trading, transaction monitoring and aggregation, investment calculation, pension-fund unit pricing, error handling and reporting for pension funds and unit-linked companies.
-              </p>
-              <p class="mb-8 text-base leading-relaxed text-mist-600">
-                At the time of its acquisition by Huddlestock in 2023, DTech served over 6,000 companies, with employees' private pension funds managed through the platform.
-              </p>
-              <div class="grid grid-cols-2 gap-6 border-t border-white/10 pt-6 sm:grid-cols-3">
-                <div>
-                  <p class="font-display text-2xl font-extrabold text-brand"><span data-count>6,000</span>+</p>
-                  <p class="mt-1 text-xs font-semibold text-mist-600">companies served</p>
-                </div>
-                <div>
-                  <p class="font-display text-2xl font-extrabold text-brand">2023</p>
-                  <p class="mt-1 text-xs font-semibold text-mist-600">acquired by Huddlestock</p>
-                </div>
-                <div>
-                  <p class="font-display text-2xl font-extrabold text-brand">2+ yrs</p>
-                  <p class="mt-1 text-xs font-semibold text-mist-600">build to launch</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- 02 LIMS -->
-        <article id="lims" class="case rounded-2xl border border-white/10 bg-navy-800/50 p-8 sm:p-10" data-tags="public software">
-          <div class="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,17rem)_1fr] lg:gap-14">
-            <div>
-              <p class="mb-5 font-display text-sm font-bold text-brand/70">02</p>
-              <h3 class="mb-4 font-display text-2xl font-extrabold leading-snug text-white">LIMS</h3>
-              <p class="mb-3 text-sm font-semibold text-mist-200">Laboratory Information Management System</p>
-              <p class="mb-5 text-xs leading-relaxed text-mist-600">National Forensic Center, Ministry of Interior of the Republic of Serbia — funded by UNDP</p>
-              <ul class="flex flex-wrap gap-2">
-                <li class="rounded-md bg-brand/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[.14em] text-brand">Public sector</li>
-                <li class="rounded-md bg-brand/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[.14em] text-brand">UNDP</li>
-              </ul>
-            </div>
-            <div>
-              <p class="mb-6 text-base leading-relaxed text-mist-400">
-                Selected by UNDP to build the Laboratory Information Management System for the Ministry's National Forensic Center, supporting the country's entire investigative cycle — from crime-scene and ballistic examination through the full chain of custody.
-              </p>
-              <p class="text-base leading-relaxed text-mist-600">
-                The aim is to strengthen the Ministry's capacity across investigations, leading to better-supported convictions. All forensic analysis for the Center is now conducted within the system.
-              </p>
-            </div>
-          </div>
-        </article>
-
-        <!-- 03 SALW -->
-        <article id="salw" class="case rounded-2xl border border-white/10 bg-navy-800/50 p-8 sm:p-10" data-tags="public software">
-          <div class="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,17rem)_1fr] lg:gap-14">
-            <div>
-              <p class="mb-5 font-display text-sm font-bold text-brand/70">03</p>
-              <h3 class="mb-4 font-display text-2xl font-extrabold leading-snug text-white">SALW Browser</h3>
-              <p class="mb-3 text-sm font-semibold text-mist-200">National Firearms &amp; Ammunition Registry</p>
-              <p class="mb-5 text-xs leading-relaxed text-mist-600">Ministry of Interior of the Republic of Serbia — funded by UNDP</p>
-              <ul class="flex flex-wrap gap-2">
-                <li class="rounded-md bg-brand/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[.14em] text-brand">Public sector</li>
-                <li class="rounded-md bg-brand/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[.14em] text-brand">UNDP</li>
-              </ul>
-            </div>
-            <div>
-              <p class="mb-6 text-base leading-relaxed text-mist-400">
-                Also for the Ministry of Interior and funded by UNDP, we built SALW — a web application deployed across the Ministry's intranet that gives authorized users fast, centralized access to every database tracking small arms, light weapons and ammunition nationwide.
-              </p>
-              <p class="text-base leading-relaxed text-mist-600">
-                Access is governed by role-based rights, and the system covers reporting as well as lookup. UNDP has recognized our team as a responsible and professional partner, with further collaboration planned.
-              </p>
-            </div>
-          </div>
-        </article>
-
-        <!-- 04 Government -->
-        <article id="giz" class="case rounded-2xl border border-white/10 bg-navy-800/50 p-8 sm:p-10" data-tags="public software">
-          <div class="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,17rem)_1fr] lg:gap-14">
-            <div>
-              <p class="mb-5 font-display text-sm font-bold text-brand/70">04</p>
-              <h3 class="mb-4 font-display text-2xl font-extrabold leading-snug text-white">Government of Serbia</h3>
-              <p class="mb-3 text-sm font-semibold text-mist-200">Information System of the General Secretariat</p>
-              <p class="mb-5 text-xs leading-relaxed text-mist-600">Commissioned by GIZ, the German development agency</p>
-              <ul class="flex flex-wrap gap-2">
-                <li class="rounded-md bg-brand/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[.14em] text-brand">Public sector</li>
-                <li class="rounded-md bg-brand/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[.14em] text-brand">eGovernment</li>
-              </ul>
-            </div>
-            <div>
-              <p class="mb-6 text-base leading-relaxed text-mist-400">
-                GIZ entrusted us with upgrading the platform the Government uses to plan and report on its annual work — the software behind electronic government sessions of the Republic of Serbia.
-              </p>
-              <ul class="space-y-3 border-t border-white/10 pt-6 text-base text-mist-600">
-                <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"></span>Government Activity Plan &amp; Report (GAPR)</li>
-                <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"></span>Government Meeting Preparation</li>
-              </ul>
-            </div>
-          </div>
-        </article>
-
-        <!-- 05 Ofrex -->
-        <article id="ofrex" class="case rounded-2xl border border-white/10 bg-navy-800/50 p-8 sm:p-10" data-tags="data software">
-          <div class="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,17rem)_1fr] lg:gap-14">
-            <div>
-              <p class="mb-5 font-display text-sm font-bold text-brand/70">05</p>
-              <h3 class="mb-4 font-display text-2xl font-extrabold leading-snug text-white">Ofrex</h3>
-              <p class="mb-3 text-sm font-semibold text-mist-200">B2B E-Commerce Platform &amp; Data Warehouse</p>
-              <p class="mb-5 text-xs leading-relaxed text-mist-600">Switzerland</p>
-              <ul class="flex flex-wrap gap-2">
-                <li class="rounded-md bg-brand/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[.14em] text-brand">Data engineering</li>
-                <li class="rounded-md bg-brand/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[.14em] text-brand">E-commerce</li>
-              </ul>
-            </div>
-            <div>
-              <p class="mb-6 text-base leading-relaxed text-mist-400">
-                One of the largest B2B web shops in Switzerland — with 200,000+ products and tens of thousands of business clients — needed both a platform upgrade and real visibility into their data.
-              </p>
-              <p class="mb-6 text-base leading-relaxed text-mist-600">
-                We worked with Ofrex's leadership to negotiate the Shopify partnership and design a new system architecture, then led a full migration off their legacy platform and ERP database into a modern data warehouse. Within six months most data had moved to the new platform, which was already generating a return on investment — and giving the team fast, reliable analytics on the state of the business for the first time.
-              </p>
-              <div class="mb-6 grid grid-cols-2 gap-6 border-t border-white/10 pt-6 sm:grid-cols-3">
-                <div>
-                  <p class="font-display text-2xl font-extrabold text-brand"><span data-count>200,000</span>+</p>
-                  <p class="mt-1 text-xs font-semibold text-mist-600">products migrated</p>
-                </div>
-                <div>
-                  <p class="font-display text-2xl font-extrabold text-brand">6 months</p>
-                  <p class="mt-1 text-xs font-semibold text-mist-600">to ROI</p>
-                </div>
-                <div>
-                  <p class="font-display text-2xl font-extrabold text-brand">10,000s</p>
-                  <p class="mt-1 text-xs font-semibold text-mist-600">of business clients</p>
-                </div>
-              </div>
-              <ul class="flex flex-wrap gap-2">
-                <li class="rounded-lg bg-white/5 px-3 py-1.5 text-xs font-semibold text-mist-200">BigQuery</li>
-                <li class="rounded-lg bg-white/5 px-3 py-1.5 text-xs font-semibold text-mist-200">Cloud Run</li>
-                <li class="rounded-lg bg-white/5 px-3 py-1.5 text-xs font-semibold text-mist-200">Apache Airflow</li>
-                <li class="rounded-lg bg-white/5 px-3 py-1.5 text-xs font-semibold text-mist-200">dbt</li>
-                <li class="rounded-lg bg-white/5 px-3 py-1.5 text-xs font-semibold text-mist-200">Looker Studio</li>
-                <li class="rounded-lg bg-white/5 px-3 py-1.5 text-xs font-semibold text-mist-200">Shopify</li>
-                <li class="rounded-lg bg-white/5 px-3 py-1.5 text-xs font-semibold text-mist-200">Algolia</li>
-                <li class="rounded-lg bg-white/5 px-3 py-1.5 text-xs font-semibold text-mist-200">OpenAI</li>
-              </ul>
-            </div>
-          </div>
-        </article>
-
-        <!-- 06 Tribute Brand -->
-        <article id="tribute" class="case rounded-2xl border border-white/10 bg-navy-800/50 p-8 sm:p-10" data-tags="ai">
-          <div class="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,17rem)_1fr] lg:gap-14">
-            <div>
-              <p class="mb-5 font-display text-sm font-bold text-brand/70">06</p>
-              <h3 class="mb-4 font-display text-2xl font-extrabold leading-snug text-white">Tribute Brand</h3>
-              <p class="mb-5 text-sm font-semibold text-mist-200">AI &amp; Computer Vision for Digital Fashion</p>
-              <ul class="flex flex-wrap gap-2">
-                <li class="rounded-md bg-brand/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[.14em] text-brand">Computer vision</li>
-                <li class="rounded-md bg-brand/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[.14em] text-brand">Research</li>
-              </ul>
-            </div>
-            <div>
-              <p class="mb-6 text-base leading-relaxed text-mist-400">
-                We work directly with the team at Tribute Brand — one of the top digital fashion brands in the world — on AI and computer vision research for digital clothing that consumers can buy and "wear" virtually.
-              </p>
-              <p class="mb-6 text-base leading-relaxed text-mist-600">
-                One of our projects builds the 3D pose-estimation models that let people try on Tribute's creations in real time using AR. The work started from doctoral theses, which we reviewed and translated into production software — the kind of task our academic background makes routine rather than exceptional.
-              </p>
-              <ul class="flex flex-wrap gap-2">
-                <li class="rounded-lg bg-white/5 px-3 py-1.5 text-xs font-semibold text-mist-200">3D pose estimation</li>
-                <li class="rounded-lg bg-white/5 px-3 py-1.5 text-xs font-semibold text-mist-200">AR</li>
-                <li class="rounded-lg bg-white/5 px-3 py-1.5 text-xs font-semibold text-mist-200">Deep learning</li>
-              </ul>
-            </div>
-          </div>
-        </article>
-
-        <!-- 07 Diet -->
-        <article id="diet" class="case rounded-2xl border border-white/10 bg-navy-800/50 p-8 sm:p-10" data-tags="ai data">
-          <div class="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,17rem)_1fr] lg:gap-14">
-            <div>
-              <p class="mb-5 font-display text-sm font-bold text-brand/70">07</p>
-              <h3 class="mb-4 font-display text-2xl font-extrabold leading-snug text-white">Diet &amp; Supplement Recommender</h3>
-              <p class="mb-3 text-sm font-semibold text-mist-200">Personalized nutrition at consumer scale</p>
-              <p class="mb-5 text-xs leading-relaxed text-mist-600">A leading global pharmaceutical company</p>
-              <ul class="flex flex-wrap gap-2">
-                <li class="rounded-md bg-brand/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[.14em] text-brand">Recommender</li>
-                <li class="rounded-md bg-brand/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[.14em] text-brand">Machine learning</li>
-              </ul>
-            </div>
-            <div>
-              <p class="mb-6 text-base leading-relaxed text-mist-400">
-                We built a recommendation engine for a direct-to-consumer supplement platform — analyzing lifestyle inputs like sleep, mood and daily habits to identify likely nutrient deficiencies, then generating personalized meal plans by mapping thousands of recipes to their nutritional profiles.
-              </p>
-              <p class="text-base leading-relaxed text-mist-600">
-                With no historical user-feedback data available, a collaborative recommender was out of reach, so we built a content-based system with custom similarity scoring — adding a stochastic component to keep suggestions fresh rather than repetitive. The client reported the project fully met their expectations.
-              </p>
-            </div>
-          </div>
-        </article>
-
-        <!-- 08 IVF -->
-        <article id="ivf" class="case rounded-2xl border border-white/10 bg-navy-800/50 p-8 sm:p-10" data-tags="software ai">
-          <div class="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,17rem)_1fr] lg:gap-14">
-            <div>
-              <p class="mb-5 font-display text-sm font-bold text-brand/70">08</p>
-              <h3 class="mb-4 font-display text-2xl font-extrabold leading-snug text-white">IVF Support Startup</h3>
-              <p class="mb-5 text-sm font-semibold text-mist-200">Innovation Fund of Serbia — second prize</p>
-              <ul class="flex flex-wrap gap-2">
-                <li class="rounded-md bg-brand/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[.14em] text-brand">HealthTech</li>
-                <li class="rounded-md bg-brand/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[.14em] text-brand">Startup</li>
-              </ul>
-            </div>
-            <div>
-              <p class="text-base leading-relaxed text-mist-400">
-                We built the technology behind a startup tackling challenges in in-vitro fertilization. The startup went on to win second prize from the Innovation Fund of Serbia, recognized for both its concept and its implementation.
-              </p>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= MORE PROJECTS ================= -->
-  <section id="more" class="border-t border-white/10 bg-navy-950/40 px-6 py-20 sm:py-28">
-    <div class="mx-auto max-w-7xl">
-      <div class="mb-12 max-w-3xl">
-        <h2 class="mb-5 font-display text-2xl font-extrabold text-white sm:text-3xl">More projects</h2>
-        <p class="text-base leading-relaxed text-mist-600">
-          From our own startups to quick proofs of concept.
+  <!-- ============ HERO ============ -->
+  <section class="relative overflow-hidden">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="wrap relative grid gap-10 pb-12 pt-12 sm:pb-14 sm:pt-16 lg:grid-cols-12 lg:items-end lg:gap-16 lg:pb-20 lg:pt-24">
+      <div class="hero-stagger lg:col-span-8">
+        <p class="eyebrow mb-7">Selected work</p>
+        <h1 class="h1 mb-7">National systems, acquired platforms, <span class="text-brand">real&nbsp;migrations.</span></h1>
+        <p class="lead max-w-2xl">
+          A snapshot of the problems we've tackled, from national infrastructure for the Ministry of Interior to our own startups and quick proofs of concept.
         </p>
       </div>
 
-      <div class="stagger grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+      <dl class="hero-panel hairgrid grid-cols-3 lg:col-span-4 lg:grid-cols-1">
+        <div class="flex flex-col-reverse p-3 min-[360px]:p-4 sm:p-5 lg:flex-row-reverse lg:items-baseline lg:justify-end lg:gap-4 lg:px-6">
+          <dt class="mt-1.5 text-[12px] leading-snug text-mist-600 lg:mt-0 lg:text-sm">projects</dt>
+          <dd class="font-display text-[1.75rem] font-extrabold leading-none text-white lg:w-16 lg:text-[2rem]">14</dd>
+        </div>
+        <div class="flex flex-col-reverse p-3 min-[360px]:p-4 sm:p-5 lg:flex-row-reverse lg:items-baseline lg:justify-end lg:gap-4 lg:px-6">
+          <dt class="mt-1.5 text-[12px] leading-snug text-mist-600 lg:mt-0 lg:text-sm">government systems</dt>
+          <dd class="font-display text-[1.75rem] font-extrabold leading-none text-white lg:w-16 lg:text-[2rem]">3</dd>
+        </div>
+        <div class="flex flex-col-reverse p-3 min-[360px]:p-4 sm:p-5 lg:flex-row-reverse lg:items-baseline lg:justify-end lg:gap-4 lg:px-6">
+          <dt class="mt-1.5 text-[12px] leading-snug text-mist-600 lg:mt-0 lg:text-sm">platform acquired</dt>
+          <dd class="font-display text-[1.75rem] font-extrabold leading-none text-white lg:w-16 lg:text-[2rem]">1</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
 
-        <article class="card flex flex-col rounded-2xl border border-white/10 bg-navy-800/50 p-7" data-tags="ai">
-          <span class="mb-5 w-fit rounded-md bg-brand/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[.14em] text-brand">Our own startup</span>
-          <h3 class="mb-3 font-display text-lg font-bold text-white">Cloud City</h3>
-          <p class="mb-6 flex-grow text-sm leading-relaxed text-mist-600">
-            A smart-city monitoring platform: custom Raspberry Pi–based hardware with multiple sensors, paired with computer vision that detects issues like potholes and broken traffic signs in real time. We handled the complete vision pipeline — capturing video across Belgrade, labelling with CVAT, training and deploying into production.
-          </p>
-          <p class="mt-auto border-t border-white/10 pt-5 text-xs font-semibold text-mist-400">
-            NALED StarTech grant 2022 · NVIDIA Inception member
-          </p>
-        </article>
+  <!-- ============ FILTER ============ -->
+  <div class="filter-bar">
+    <div class="wrap flex items-center gap-6">
+      <div class="chips-scroll min-w-0 flex-1" role="group" aria-label="Filter projects by domain">
+        <button type="button" class="chip" data-filter="all" aria-pressed="true">All <span class="ml-1 opacity-70">14</span></button>
+        <button type="button" class="chip" data-filter="ai" aria-pressed="false">AI &amp; Computer Vision <span class="ml-1 opacity-70">6</span></button>
+        <button type="button" class="chip" data-filter="data" aria-pressed="false">Data <span class="ml-1 opacity-70">5</span></button>
+        <button type="button" class="chip" data-filter="software" aria-pressed="false">Software <span class="ml-1 opacity-70">7</span></button>
+        <button type="button" class="chip" data-filter="public" aria-pressed="false">Public sector <span class="ml-1 opacity-70">3</span></button>
+      </div>
+      <p id="filter-count" role="status" class="sr-only shrink-0 text-xs font-semibold text-mist-600 lg:not-sr-only">14 projects</p>
+    </div>
+  </div>
 
-        <article class="card flex flex-col rounded-2xl border border-white/10 bg-navy-800/50 p-7" data-tags="data">
-          <span class="mb-5 w-fit rounded-md bg-brand/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[.14em] text-brand">Data science</span>
-          <h3 class="mb-3 font-display text-lg font-bold text-white">Insurance Industry Analytics</h3>
-          <p class="mb-6 flex-grow text-sm leading-relaxed text-mist-600">
-            Our data scientists work as an integral part of the core analytics team for a global insurance company<span aria-hidden="true">*</span> — fraud detection, cross-sell and upsell recommendations, campaign monitoring, churn prediction, KPI tracking and data engineering, across business units worldwide.
-          </p>
-          <p class="mt-auto border-t border-white/10 pt-5 text-xs font-semibold text-mist-400">
-            5+ years · end-to-end data science
-          </p>
-        </article>
-
-        <article class="card flex flex-col rounded-2xl border border-white/10 bg-navy-800/50 p-7" data-tags="data">
-          <span class="mb-5 w-fit rounded-md bg-brand/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[.14em] text-brand">Data engineering</span>
-          <h3 class="mb-3 font-display text-lg font-bold text-white">Homly Web Shop</h3>
-          <p class="mb-6 flex-grow text-sm leading-relaxed text-mist-600">
-            A full data-ingestion pipeline in Apache Airflow that aggregates products from several suppliers into one unified catalog, synced with Shopify — including NLP-based category matching across sources, reporting and Google Ads suggestions.
-          </p>
-          <p class="mt-auto border-t border-white/10 pt-5 text-xs font-semibold text-mist-400">
-            Airflow · Postgres · Shopify · NLP
-          </p>
-        </article>
-
-        <article class="card flex flex-col rounded-2xl border border-white/10 bg-navy-800/50 p-7" data-tags="ai">
-          <span class="mb-5 w-fit rounded-md bg-brand/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[.14em] text-brand">Computer vision</span>
-          <h3 class="mb-3 font-display text-lg font-bold text-white">Furniture Volume Estimation</h3>
-          <p class="mb-6 flex-grow text-sm leading-relaxed text-mist-600">
-            A mobile app for a US moving-industry client that uses a custom ConvNet and point-cloud tracking to detect furniture from the camera, fit an optimal bounding box and automatically estimate shipping volume.
-          </p>
-          <p class="mt-auto border-t border-white/10 pt-5 text-xs font-semibold text-mist-400">
-            Proof of concept · on-device inference
-          </p>
-        </article>
-
-        <article class="card flex flex-col rounded-2xl border border-white/10 bg-navy-800/50 p-7" data-tags="ai">
-          <span class="mb-5 w-fit rounded-md bg-brand/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[.14em] text-brand">Computer vision</span>
-          <h3 class="mb-3 font-display text-lg font-bold text-white">Counting Chips in a Stack</h3>
-          <p class="mb-6 flex-grow text-sm leading-relaxed text-mist-600">
-            A proof of concept using a ConvNet to detect stacks of casino chips, image segmentation to extract the key shapes, and OpenCV to count and value them — enabling image-based player-value tracking.
-          </p>
-          <p class="mt-auto border-t border-white/10 pt-5 text-xs font-semibold text-mist-400">
-            Proof of concept · OpenCV · segmentation
-          </p>
-        </article>
-
-        <article class="card flex flex-col rounded-2xl border border-white/10 bg-navy-800/50 p-7" data-tags="software">
-          <span class="mb-5 w-fit rounded-md bg-brand/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[.14em] text-brand">Software</span>
-          <h3 class="mb-3 font-display text-lg font-bold text-white">Swan Limo Service</h3>
-          <p class="mb-6 flex-grow text-sm leading-relaxed text-mist-600">
-            A booking and payment system for a San Diego limo service, replacing phone calls and long email threads with a few clicks — designed to grow into a full dispatch platform with mathematical optimization for driver assignment.
-          </p>
-          <p class="mt-auto border-t border-white/10 pt-5 text-xs font-semibold text-mist-400">
-            Booking · payments · dispatch
-          </p>
-        </article>
-
+  <!-- ============ FLAGSHIP CASE STUDIES (light) ============ -->
+  <section id="flagship" class="surface-alt pb-10 pt-14 sm:pt-20 lg:pb-16 lg:pt-24" data-group>
+    <div class="wrap">
+      <div class="mb-2 flex items-end justify-between gap-6 lg:mb-4">
+        <h2 class="font-display text-[1.6rem] font-extrabold tracking-[-.01em] text-white sm:text-3xl">Flagship case studies</h2>
+        <p class="font-display text-sm font-bold text-mist-500" aria-hidden="true"><span data-group-count>08</span></p>
       </div>
 
-      <p class="mt-10 text-xs leading-relaxed text-mist-600">
-        <span aria-hidden="true">*</span> Client name withheld under a confidentiality agreement. We're always happy to discuss the technical side of the work.
-      </p>
+      <!-- 01 DTech -->
+      <article id="dtech" class="case reveal" data-tags="software data">
+        <div>
+          <div class="mb-5 flex flex-wrap items-center gap-x-4 gap-y-2"><span class="case-num">01</span><span class="tag">FinTech</span><span class="tag">SaaS</span></div>
+          <h3 class="case-title">DTech</h3>
+          <p class="mt-3 font-display text-[1.05rem] font-semibold leading-snug text-white">Pension fund management SaaS platform</p>
+          <dl class="case-stats mt-7">
+            <div class="flex flex-col-reverse"><dt>companies served at acquisition</dt><dd><span data-count>6,000</span>+</dd></div>
+            <div class="flex flex-col-reverse"><dt>acquired by Huddlestock</dt><dd>2023</dd></div>
+            <div class="flex flex-col-reverse"><dt>of development to launch</dt><dd>2+ yrs</dd></div>
+          </dl>
+        </div>
+        <div class="collapsible mt-7 lg:mt-1">
+          <p class="copy sm:text-[16px]">We built the DTech platform from the ground up: a flexible SaaS product handling fund trading, transaction monitoring and aggregation, investment calculation, pension-fund unit pricing, error handling and reporting for pension funds and unit-linked companies.</p>
+          <div class="more-content">
+            <p class="copy mt-4 sm:mt-5 sm:text-[16px]">At the time of its acquisition by Huddlestock in 2023, DTech served over 6,000 companies, with employees' private pension funds managed through the platform.</p>
+          </div>
+          <button type="button" class="more-btn" aria-expanded="false"><span>Read more</span><svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/></svg></button>
+        </div>
+      </article>
+
+      <!-- 02 LIMS -->
+      <article id="lims" class="case reveal" data-tags="public software">
+        <div>
+          <div class="mb-5 flex flex-wrap items-center gap-x-4 gap-y-2"><span class="case-num">02</span><span class="tag">Public sector</span><span class="tag">UNDP</span></div>
+          <h3 class="case-title">LIMS</h3>
+          <p class="mt-3 font-display text-[1.05rem] font-semibold leading-snug text-white">Laboratory Information Management System</p>
+          <p class="mt-2 text-[13.5px] leading-relaxed text-mist-500">National Forensic Center, Ministry of Interior of the Republic of Serbia · funded by UNDP</p>
+        </div>
+        <div class="collapsible mt-7 lg:mt-1">
+          <p class="copy sm:text-[16px]">Selected by UNDP to build the Laboratory Information Management System for the Ministry's National Forensic Center, supporting the country's entire investigative cycle, from crime-scene and ballistic examination through the full chain of custody.</p>
+          <div class="more-content">
+            <p class="copy mt-4 sm:mt-5 sm:text-[16px]">The aim is to strengthen investigations that lead to regular convictions. Today, all forensic analysis at the Center is conducted within the system we built.</p>
+          </div>
+          <button type="button" class="more-btn" aria-expanded="false"><span>Read more</span><svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/></svg></button>
+        </div>
+      </article>
+
+      <!-- 03 SALW -->
+      <article id="salw" class="case reveal" data-tags="public software">
+        <div>
+          <div class="mb-5 flex flex-wrap items-center gap-x-4 gap-y-2"><span class="case-num">03</span><span class="tag">Public sector</span><span class="tag">UNDP</span></div>
+          <h3 class="case-title">SALW Browser</h3>
+          <p class="mt-3 font-display text-[1.05rem] font-semibold leading-snug text-white">National firearms &amp; ammunition registry</p>
+          <p class="mt-2 text-[13.5px] leading-relaxed text-mist-500">Ministry of Interior of the Republic of Serbia · funded by UNDP</p>
+        </div>
+        <div class="collapsible mt-7 lg:mt-1">
+          <p class="copy sm:text-[16px]">A web application deployed across the Ministry's intranet that gives authorized users fast, centralized access (in line with their access rights) to every database tracking small arms, light weapons and ammunition nationwide.</p>
+          <div class="more-content">
+            <p class="copy mt-4 sm:mt-5 sm:text-[16px]">The system covers reporting as well as lookup, and now holds the records on privately owned firearms in Serbia. UNDP has recognized our team as a responsible and professional partner.</p>
+          </div>
+          <button type="button" class="more-btn" aria-expanded="false"><span>Read more</span><svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/></svg></button>
+        </div>
+      </article>
+
+      <!-- 04 Government / GIZ -->
+      <article id="giz" class="case reveal" data-tags="public software">
+        <div>
+          <div class="mb-5 flex flex-wrap items-center gap-x-4 gap-y-2"><span class="case-num">04</span><span class="tag">Public sector</span><span class="tag">eGovernment</span></div>
+          <h3 class="case-title">Government of Serbia</h3>
+          <p class="mt-3 font-display text-[1.05rem] font-semibold leading-snug text-white">Information system of the General Secretariat</p>
+          <p class="mt-2 text-[13.5px] leading-relaxed text-mist-500">Commissioned by GIZ, the German development agency</p>
+        </div>
+        <div class="mt-7 lg:mt-1">
+          <p class="copy sm:text-[16px]">GIZ entrusted us with upgrading the platform the Government uses to plan and report on its annual work: the software behind electronic government sessions of the Republic of Serbia. We extended two core subsystems:</p>
+          <ul class="mt-5 space-y-2.5 text-[15.5px] font-semibold text-white">
+            <li class="flex gap-3"><span class="mt-[9px] h-1.5 w-1.5 shrink-0 rotate-45 bg-brand"></span>Government Activity Plan &amp; Report (GAPR)</li>
+            <li class="flex gap-3"><span class="mt-[9px] h-1.5 w-1.5 shrink-0 rotate-45 bg-brand"></span>Government Meeting Preparation</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 05 Ofrex -->
+      <article id="ofrex" class="case reveal" data-tags="data software">
+        <div>
+          <div class="mb-5 flex flex-wrap items-center gap-x-4 gap-y-2"><span class="case-num">05</span><span class="tag">Data engineering</span><span class="tag">E-commerce</span></div>
+          <h3 class="case-title">Ofrex</h3>
+          <p class="mt-3 font-display text-[1.05rem] font-semibold leading-snug text-white">B2B e-commerce platform &amp; data warehouse</p>
+          <p class="mt-2 text-[13.5px] leading-relaxed text-mist-500">Switzerland</p>
+          <dl class="case-stats mt-7">
+            <div class="flex flex-col-reverse"><dt>products migrated</dt><dd><span data-count>200,000</span>+</dd></div>
+            <div class="flex flex-col-reverse"><dt>months to ROI</dt><dd>6</dd></div>
+            <div class="flex flex-col-reverse"><dt>business clients</dt><dd>10k+</dd></div>
+          </dl>
+        </div>
+        <div class="mt-7 lg:mt-1">
+          <div class="collapsible">
+            <p class="copy sm:text-[16px]">One of the largest B2B web shops in Switzerland, with 200,000+ products and tens of thousands of business clients, needed both a platform upgrade and real visibility into its data.</p>
+            <div class="more-content">
+              <p class="copy mt-4 sm:mt-5 sm:text-[16px]">We worked with Ofrex's leadership to negotiate the Shopify partnership and design a new architecture, then led a full migration off the legacy platform and ERP database into a modern data warehouse. Within six months most data had moved and the new platform was already generating a return on investment, giving the team fast, reliable analytics on the state of the business for the first time.</p>
+            </div>
+            <button type="button" class="more-btn" aria-expanded="false"><span>Read more</span><svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <ul class="mt-6 flex flex-wrap gap-2">
+            <li class="tech">BigQuery</li><li class="tech">Cloud Run</li><li class="tech">Apache Airflow</li><li class="tech">dbt</li><li class="tech">Looker Studio</li><li class="tech">Shopify</li><li class="tech">Algolia</li><li class="tech">OpenAI</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 06 Tribute Brand -->
+      <article id="tribute" class="case reveal" data-tags="ai">
+        <div>
+          <div class="mb-5 flex flex-wrap items-center gap-x-4 gap-y-2"><span class="case-num">06</span><span class="tag">Computer vision</span><span class="tag">Research</span></div>
+          <h3 class="case-title">Tribute Brand</h3>
+          <p class="mt-3 font-display text-[1.05rem] font-semibold leading-snug text-white">AI &amp; computer vision for digital fashion</p>
+        </div>
+        <div class="mt-7 lg:mt-1">
+          <div class="collapsible">
+            <p class="copy sm:text-[16px]">We work directly with the team at Tribute Brand, one of the top digital fashion brands in the world, on AI and computer vision research for digital clothing that people can buy and "wear" virtually.</p>
+            <div class="more-content">
+              <p class="copy mt-4 sm:mt-5 sm:text-[16px]">One of our projects builds the 3D pose-estimation models that let people try on Tribute's creations in real time using AR. The work started from doctoral theses, which we reviewed and translated into production software. Routine work for a team with our academic background.</p>
+            </div>
+            <button type="button" class="more-btn" aria-expanded="false"><span>Read more</span><svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <ul class="mt-6 flex flex-wrap gap-2">
+            <li class="tech">3D pose estimation</li><li class="tech">AR</li><li class="tech">Deep learning</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 07 Diet -->
+      <article id="diet" class="case reveal" data-tags="ai data">
+        <div>
+          <div class="mb-5 flex flex-wrap items-center gap-x-4 gap-y-2"><span class="case-num">07</span><span class="tag">Recommender</span><span class="tag">Machine learning</span></div>
+          <h3 class="case-title">Diet &amp; supplement recommender</h3>
+          <p class="mt-3 font-display text-[1.05rem] font-semibold leading-snug text-white">Personalized nutrition at consumer scale</p>
+          <p class="mt-2 text-[13.5px] leading-relaxed text-mist-500">A leading global pharmaceutical company</p>
+        </div>
+        <div class="collapsible mt-7 lg:mt-1">
+          <p class="copy sm:text-[16px]">A recommendation engine for a direct-to-consumer supplement platform. It analyzes lifestyle inputs like sleep, mood and daily habits to identify likely nutrient deficiencies, then generates personalized meal plans by mapping thousands of recipes to their nutritional profiles.</p>
+          <div class="more-content">
+            <p class="copy mt-4 sm:mt-5 sm:text-[16px]">With no historical user-feedback data, a collaborative recommender was out of reach, so we built a content-based system with custom similarity scoring, plus a stochastic component to keep suggestions fresh rather than repetitive. The client reported that the project fully met their expectations.</p>
+          </div>
+          <button type="button" class="more-btn" aria-expanded="false"><span>Read more</span><svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/></svg></button>
+        </div>
+      </article>
+
+      <!-- 08 IVF -->
+      <article id="ivf" class="case reveal" data-tags="software ai">
+        <div>
+          <div class="mb-5 flex flex-wrap items-center gap-x-4 gap-y-2"><span class="case-num">08</span><span class="tag">HealthTech</span><span class="tag">Startup</span></div>
+          <h3 class="case-title">IVF support startup</h3>
+          <p class="mt-3 font-display text-[1.05rem] font-semibold leading-snug text-white">Innovation Fund of Serbia, second prize</p>
+        </div>
+        <div class="mt-7 lg:mt-1">
+          <p class="copy sm:text-[16px]">We built the technology behind a startup tackling challenges in in-vitro fertilization. The startup went on to win second prize from the Innovation Fund of Serbia, recognized for both its concept and its implementation.</p>
+        </div>
+      </article>
     </div>
   </section>
 
-  <p id="empty-state" class="hidden border-t border-white/10 px-6 py-24 text-center text-sm font-semibold text-mist-600">No projects in this category.</p>
+  <!-- ============ MORE PROJECTS ============ -->
+  <section id="more" class="pt-16 sm:pt-24 lg:pt-28" data-group>
+    <div class="wrap">
+      <div class="mb-10 grid gap-6 lg:mb-14 lg:grid-cols-12 lg:items-end lg:gap-16">
+        <div class="lg:col-span-7">
+          <p class="eyebrow mb-6">More projects</p>
+          <h2 class="h2">From our own startups to <span class="text-brand">quick proofs of concept</span></h2>
+        </div>
+      </div>
 
-  <!-- ================= CTA ================= -->
-  <section class="relative overflow-hidden border-t border-white/10 bg-navy-700/40 px-6 py-24 sm:py-32">
-    <svg viewBox="0 0 572.6 436" class="pointer-events-none absolute -right-16 top-1/2 h-72 w-auto -translate-y-1/2 text-white/[.03] sm:h-96" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M1.0 0.3 L5.8 0.0 L13.3 2.6 L25.8 4.0 L31.8 6.6 L84.3 16.0 L113.8 23.0 L122.3 23.6 L130.3 26.0 L142.3 27.6 L151.3 30.6 L162.3 31.6 L168.8 34.0 L181.8 35.6 L190.8 38.6 L201.8 39.6 L210.8 42.6 L221.8 43.6 L230.8 46.6 L241.8 47.6 L247.3 50.0 L262.8 52.0 L271.8 55.0 L294.3 58.0 L439.3 59.0 L442.8 60.6 L488.3 60.6 L493.8 62.0 L520.3 62.0 L526.3 63.0 L535.3 67.6 L545.3 75.6 L560.0 93.8 L565.0 105.3 L568.6 110.3 L572.6 122.3 L572.6 127.3 L569.3 129.6 L561.8 127.0 L549.3 126.0 L540.3 123.0 L530.8 122.6 L516.8 119.0 L504.8 118.0 L497.8 115.6 L482.3 114.0 L475.8 111.6 L462.3 110.6 L456.3 108.0 L441.3 106.6 L431.8 103.6 L418.8 102.6 L410.3 99.6 L394.8 98.0 L388.3 95.6 L374.8 94.6 L362.8 91.0 L350.3 90.0 L342.8 87.6 L332.8 87.0 L320.3 83.6 L307.8 82.0 L303.0 82.8 L302.6 86.8 L305.6 94.8 L307.0 108.8 L309.0 112.8 L311.0 128.3 L312.3 129.6 L334.8 131.6 L340.8 134.0 L351.8 135.0 L357.3 138.0 L363.8 139.0 L381.8 147.6 L383.3 149.6 L388.3 151.0 L390.3 153.6 L394.3 155.0 L404.8 162.6 L418.6 175.3 L432.6 191.3 L438.0 201.3 L441.0 204.3 L446.6 216.8 L449.0 219.8 L450.0 224.8 L453.0 229.3 L457.0 241.3 L461.6 263.3 L461.6 304.8 L458.0 317.3 L457.0 325.8 L454.0 331.8 L453.0 337.8 L437.0 368.3 L434.0 370.8 L429.0 379.3 L412.8 396.0 L397.8 408.0 L394.8 409.0 L392.3 412.0 L387.8 413.6 L377.8 420.0 L373.3 421.0 L369.3 424.0 L364.3 425.0 L359.3 428.0 L352.8 429.0 L347.8 431.6 L333.8 433.0 L327.8 435.0 L298.8 436.0 L272.8 432.0 L248.8 424.0 L245.8 421.6 L232.8 416.0 L223.8 409.0 L219.8 407.6 L210.8 400.0 L187.6 375.8 L175.6 356.8 L174.6 352.8 L172.0 350.3 L170.6 344.3 L167.6 339.8 L166.6 334.3 L163.6 329.3 L162.6 321.8 L159.6 314.8 L158.0 298.3 L156.6 294.8 L156.6 270.8 L158.6 263.8 L160.0 248.3 L167.6 224.8 L170.0 221.8 L171.6 215.8 L174.0 213.3 L179.0 202.3 L196.0 179.8 L219.3 159.0 L229.8 153.6 L231.3 151.6 L236.8 149.6 L239.3 147.0 L253.3 141.6 L256.8 139.0 L263.3 138.0 L269.3 135.0 L281.8 133.6 L286.0 129.8 L276.6 81.8 L273.8 79.0 L265.3 77.6 L212.3 77.6 L208.3 76.0 L49.8 74.0 L47.3 72.0 L41.3 70.6 L33.3 64.0 L16.6 44.3 L4.6 20.8 L0.0 6.8 L1.0 0.3 Z M301.3 205.6 L291.8 206.6 L280.3 211.0 L264.3 222.6 L255.0 233.8 L247.6 248.8 L243.6 262.8 L242.6 272.3 L243.0 300.8 L248.0 318.8 L250.0 320.8 L252.0 326.8 L259.6 338.3 L269.8 348.0 L282.8 356.0 L294.8 360.0 L320.8 360.6 L336.8 356.0 L344.8 351.6 L353.8 344.6 L364.6 331.8 L372.6 314.8 L374.6 302.3 L377.0 295.3 L377.6 276.3 L376.6 266.8 L369.6 243.3 L364.6 234.3 L355.8 223.0 L344.8 214.6 L326.3 206.6 L301.3 205.6 Z"/></svg>
+      <div class="rows">
+        <article class="row reveal" data-tags="ai">
+          <div><span class="tag mb-3">Our own startup</span><h3 class="h3 text-[1.3rem]">Cloud City</h3></div>
+          <p class="copy">A smart-city monitoring platform: custom Raspberry Pi-based hardware with multiple sensors, and computer vision that detects issues like potholes and broken traffic signs in real time. We ran the whole vision pipeline: capturing video across Belgrade, labelling in CVAT, training and deploying to production.</p>
+          <p class="text-[13px] font-semibold leading-relaxed text-mist-400 lg:text-right">NALED StarTech grant 2022<br>NVIDIA Inception member</p>
+        </article>
+        <article class="row reveal" data-tags="data">
+          <div><span class="tag mb-3">Data science</span><h3 class="h3 text-[1.3rem]">Insurance industry analytics</h3></div>
+          <p class="copy">Our data scientists work inside the core analytics team of a global insurance company<span aria-hidden="true">*</span>: fraud detection, cross-sell and upsell recommendations, campaign monitoring, churn prediction, KPI tracking and data engineering, across business units worldwide.</p>
+          <p class="text-[13px] font-semibold leading-relaxed text-mist-400 lg:text-right">5+ years<br>End-to-end data science</p>
+        </article>
+        <article class="row reveal" data-tags="data">
+          <div><span class="tag mb-3">Data engineering</span><h3 class="h3 text-[1.3rem]">Homly web shop</h3></div>
+          <p class="copy">A data-ingestion pipeline in Apache Airflow that aggregates products from several suppliers into one catalog synced with Shopify, with NLP-based category matching, reporting and Google Ads suggestions, plus ongoing support.</p>
+          <p class="text-[13px] font-semibold leading-relaxed text-mist-400 lg:text-right">Airflow · Postgres<br>Shopify · NLP</p>
+        </article>
+        <article class="row reveal" data-tags="ai">
+          <div><span class="tag mb-3">Computer vision</span><h3 class="h3 text-[1.3rem]">Furniture volume estimation</h3></div>
+          <p class="copy">A mobile app for a US moving-industry client: a custom ConvNet and point-cloud tracking detect furniture from the camera, fit an optimal bounding box and estimate its shipping volume.</p>
+          <p class="text-[13px] font-semibold leading-relaxed text-mist-400 lg:text-right">Proof of concept<br>On-device inference</p>
+        </article>
+        <article class="row reveal" data-tags="ai">
+          <div><span class="tag mb-3">Computer vision</span><h3 class="h3 text-[1.3rem]">Counting chips in a stack</h3></div>
+          <p class="copy">A ConvNet detects stacks of casino chips, image segmentation extracts their key shapes and OpenCV counts them, so a player's chip value can be tracked from a single image.</p>
+          <p class="text-[13px] font-semibold leading-relaxed text-mist-400 lg:text-right">Proof of concept<br>OpenCV · segmentation</p>
+        </article>
+        <article class="row reveal" data-tags="software">
+          <div><span class="tag mb-3">Software</span><h3 class="h3 text-[1.3rem]">Swan Limo Service</h3></div>
+          <p class="copy">A booking and payment system for a San Diego limo service, replacing phone calls and long email threads with a few clicks. It was designed to grow into a dispatch platform with optimized driver assignment.</p>
+          <p class="text-[13px] font-semibold leading-relaxed text-mist-400 lg:text-right">Booking · payments<br>Dispatch design</p>
+        </article>
+      </div>
 
-    <div class="relative mx-auto max-w-3xl text-center">
-      <h2 class="mb-6 font-display text-3xl font-extrabold leading-tight text-white sm:text-5xl">Ready for the next case study?</h2>
-      <p class="mb-10 text-base leading-relaxed text-mist-400 sm:text-lg">
-        Most of these started with a few sentences describing a problem. Send us yours.
-      </p>
-      <a href="mailto:office@propeler.io" class="btn-primary inline-flex items-center gap-3 rounded-xl bg-brand px-8 py-4 font-display text-base font-bold text-navy-900 sm:text-lg">
-        office@propeler.io
-        <svg class="arrow h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 7.5 12 13l9-5.5M4.5 5h15A1.5 1.5 0 0 1 21 6.5v11a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5v-11A1.5 1.5 0 0 1 4.5 5Z"/></svg>
-      </a>
+      <p class="mt-8 text-xs leading-relaxed text-mist-600"><span aria-hidden="true">*</span> Client name withheld under a confidentiality agreement. We're always happy to discuss the technical side of the work.</p>
     </div>
   </section>
+
+  <p id="empty-state" class="hidden px-5 py-24 text-center text-sm font-semibold text-mist-600">No projects in this category.</p>
+
+  <section class="section" aria-labelledby="cta-title">
+  <div class="wrap">
+    <div class="cta-card relative overflow-hidden rounded-3xl border border-brand/25 px-6 py-12 sm:px-12 sm:py-16 lg:px-16 lg:py-20">
+      <svg viewBox="0 0 572.6 436" class="pointer-events-none absolute -bottom-12 -right-16 hidden h-52 w-auto sm:block text-brand/[.10] sm:h-72 lg:-bottom-16 lg:right-6 lg:h-[24rem]" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><use href="#pm"/></svg>
+
+      <div class="relative grid gap-9 lg:grid-cols-12 lg:items-end lg:gap-12">
+        <div class="reveal lg:col-span-7">
+          <p class="eyebrow mb-6">Contact</p>
+          <h2 id="cta-title" class="h2">Ready for the next case study?</h2>
+          <p class="lead mt-5 max-w-xl">Most of these started with a few sentences describing a problem. Send us yours.</p>
+        </div>
+        <div class="reveal flex flex-col gap-4 sm:flex-row sm:items-center lg:col-span-5 lg:flex-col lg:items-end">
+          <a href="mailto:office@propeler.io" class="btn btn-primary btn-lg w-full sm:w-auto">
+            office@propeler.io
+            <svg class="arrow h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/propeler-centar/" target="_blank" rel="noopener" class="inline-flex h-11 items-center justify-center gap-2 text-sm font-bold text-mist-400 transition-colors hover:text-brand">Follow us on LinkedIn ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 </main>
 
-<!-- ================= FOOTER ================= -->
-<footer class="border-t border-white/10 bg-navy-950 px-6 py-14">
-  <div class="mx-auto max-w-7xl">
-    <div class="grid grid-cols-2 gap-10 md:grid-cols-4">
-      <div class="col-span-2 md:col-span-2">
-        <div class="mb-5 flex items-center gap-3">
-          <svg viewBox="0 0 572.6 436" class="h-7 w-auto text-brand" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M1.0 0.3 L5.8 0.0 L13.3 2.6 L25.8 4.0 L31.8 6.6 L84.3 16.0 L113.8 23.0 L122.3 23.6 L130.3 26.0 L142.3 27.6 L151.3 30.6 L162.3 31.6 L168.8 34.0 L181.8 35.6 L190.8 38.6 L201.8 39.6 L210.8 42.6 L221.8 43.6 L230.8 46.6 L241.8 47.6 L247.3 50.0 L262.8 52.0 L271.8 55.0 L294.3 58.0 L439.3 59.0 L442.8 60.6 L488.3 60.6 L493.8 62.0 L520.3 62.0 L526.3 63.0 L535.3 67.6 L545.3 75.6 L560.0 93.8 L565.0 105.3 L568.6 110.3 L572.6 122.3 L572.6 127.3 L569.3 129.6 L561.8 127.0 L549.3 126.0 L540.3 123.0 L530.8 122.6 L516.8 119.0 L504.8 118.0 L497.8 115.6 L482.3 114.0 L475.8 111.6 L462.3 110.6 L456.3 108.0 L441.3 106.6 L431.8 103.6 L418.8 102.6 L410.3 99.6 L394.8 98.0 L388.3 95.6 L374.8 94.6 L362.8 91.0 L350.3 90.0 L342.8 87.6 L332.8 87.0 L320.3 83.6 L307.8 82.0 L303.0 82.8 L302.6 86.8 L305.6 94.8 L307.0 108.8 L309.0 112.8 L311.0 128.3 L312.3 129.6 L334.8 131.6 L340.8 134.0 L351.8 135.0 L357.3 138.0 L363.8 139.0 L381.8 147.6 L383.3 149.6 L388.3 151.0 L390.3 153.6 L394.3 155.0 L404.8 162.6 L418.6 175.3 L432.6 191.3 L438.0 201.3 L441.0 204.3 L446.6 216.8 L449.0 219.8 L450.0 224.8 L453.0 229.3 L457.0 241.3 L461.6 263.3 L461.6 304.8 L458.0 317.3 L457.0 325.8 L454.0 331.8 L453.0 337.8 L437.0 368.3 L434.0 370.8 L429.0 379.3 L412.8 396.0 L397.8 408.0 L394.8 409.0 L392.3 412.0 L387.8 413.6 L377.8 420.0 L373.3 421.0 L369.3 424.0 L364.3 425.0 L359.3 428.0 L352.8 429.0 L347.8 431.6 L333.8 433.0 L327.8 435.0 L298.8 436.0 L272.8 432.0 L248.8 424.0 L245.8 421.6 L232.8 416.0 L223.8 409.0 L219.8 407.6 L210.8 400.0 L187.6 375.8 L175.6 356.8 L174.6 352.8 L172.0 350.3 L170.6 344.3 L167.6 339.8 L166.6 334.3 L163.6 329.3 L162.6 321.8 L159.6 314.8 L158.0 298.3 L156.6 294.8 L156.6 270.8 L158.6 263.8 L160.0 248.3 L167.6 224.8 L170.0 221.8 L171.6 215.8 L174.0 213.3 L179.0 202.3 L196.0 179.8 L219.3 159.0 L229.8 153.6 L231.3 151.6 L236.8 149.6 L239.3 147.0 L253.3 141.6 L256.8 139.0 L263.3 138.0 L269.3 135.0 L281.8 133.6 L286.0 129.8 L276.6 81.8 L273.8 79.0 L265.3 77.6 L212.3 77.6 L208.3 76.0 L49.8 74.0 L47.3 72.0 L41.3 70.6 L33.3 64.0 L16.6 44.3 L4.6 20.8 L0.0 6.8 L1.0 0.3 Z M301.3 205.6 L291.8 206.6 L280.3 211.0 L264.3 222.6 L255.0 233.8 L247.6 248.8 L243.6 262.8 L242.6 272.3 L243.0 300.8 L248.0 318.8 L250.0 320.8 L252.0 326.8 L259.6 338.3 L269.8 348.0 L282.8 356.0 L294.8 360.0 L320.8 360.6 L336.8 356.0 L344.8 351.6 L353.8 344.6 L364.6 331.8 L372.6 314.8 L374.6 302.3 L377.0 295.3 L377.6 276.3 L376.6 266.8 L369.6 243.3 L364.6 234.3 L355.8 223.0 L344.8 214.6 L326.3 206.6 L301.3 205.6 Z"/></svg>
+<footer class="bg-navy-950">
+  <div class="wrap py-14 lg:py-16">
+    <div class="grid grid-cols-2 gap-x-8 gap-y-10 md:grid-cols-12">
+      <div class="col-span-2 md:col-span-5">
+        <a href="index.html" class="logo-link inline-flex items-center gap-3" aria-label="Propeler Centar home">
+          <svg viewBox="0 0 572.6 436" class="logo-mark h-7 w-auto text-brand" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><use href="#pm"/></svg>
           <span class="leading-none">
-            <span class="block font-display text-[17px] font-extrabold tracking-[.06em] text-white">PROPELER</span>
-            <span class="mt-[3px] block font-display text-[9px] font-medium tracking-[.42em] text-brand">CENTAR</span>
+            <span class="block font-display text-[17px] font-extrabold tracking-[.07em] text-white">PROPELER</span>
+            <span class="mt-[3px] block font-display text-[9px] font-medium tracking-[.44em] text-brand">CENTAR</span>
           </span>
-        </div>
-        <p class="max-w-sm text-sm leading-relaxed text-mist-600">
-          Applied mathematics, AI and software. Building production systems for governments, NGOs, enterprises and startups since 2020.
+        </a>
+        <p class="mt-5 max-w-sm text-sm leading-relaxed text-mist-600">
+          Applied mathematics, AI and software. Production systems for governments, NGOs, enterprises and startups since 2020.
         </p>
       </div>
 
-      <div>
-        <p class="mb-4 text-[10px] font-bold uppercase tracking-[.2em] text-mist-600">Site</p>
-        <ul class="space-y-3 text-sm font-medium">
-          <li><a href="index.html" class="text-mist-400 hover:text-brand">Home</a></li>
-          <li><a href="index.html#services" class="text-mist-400 hover:text-brand">What we do</a></li>
-          <li><a href="projekti.html" class="text-mist-400 hover:text-brand">Selected work</a></li>
-          <li><a href="o-nama.html" class="text-mist-400 hover:text-brand">About</a></li>
+      <nav class="md:col-span-3 md:col-start-7" aria-label="Footer">
+        <p class="mb-4 text-[10.5px] font-bold uppercase tracking-[.2em] text-mist-600">Site</p>
+        <ul class="space-y-3 text-[15px] font-medium">
+          <li><a href="index.html" class="text-mist-400 transition-colors hover:text-brand">Home</a></li>
+          <li><a href="index.html#services" class="text-mist-400 transition-colors hover:text-brand">What we do</a></li>
+          <li><a href="projekti.html" class="text-mist-400 transition-colors hover:text-brand">Selected work</a></li>
+          <li><a href="o-nama.html" class="text-mist-400 transition-colors hover:text-brand">About</a></li>
         </ul>
-      </div>
+      </nav>
 
-      <div>
-        <p class="mb-4 text-[10px] font-bold uppercase tracking-[.2em] text-mist-600">Contact</p>
-        <ul class="space-y-3 text-sm font-medium">
-          <li><a href="mailto:office@propeler.io" class="text-mist-400 hover:text-brand">office@propeler.io</a></li>
-          <li><a href="https://www.linkedin.com/company/propeler-centar/" target="_blank" rel="noopener" class="text-mist-400 hover:text-brand">LinkedIn</a></li>
-          <li><span class="text-mist-600">Belgrade, Serbia</span></li>
+      <div class="md:col-span-3">
+        <p class="mb-4 text-[10.5px] font-bold uppercase tracking-[.2em] text-mist-600">Contact</p>
+        <ul class="space-y-3 text-[15px] font-medium">
+          <li><a href="mailto:office@propeler.io" class="break-all text-mist-400 transition-colors hover:text-brand">office@propeler.io</a></li>
+          <li><a href="https://www.linkedin.com/company/propeler-centar/" target="_blank" rel="noopener" class="text-mist-400 transition-colors hover:text-brand">LinkedIn ↗</a></li>
+          <li class="text-mist-600">Belgrade, Serbia</li>
         </ul>
       </div>
     </div>
 
-    <div class="mt-12 flex flex-col gap-2 border-t border-white/10 pt-7 text-xs text-mist-600 sm:flex-row sm:items-center sm:justify-between">
+    <div class="mt-12 flex flex-col gap-2 border-t border-white/10 pt-6 text-xs text-mist-600 sm:flex-row sm:items-center sm:justify-between">
       <p>© 2026 Propeler Centar. All rights reserved.</p>
-      <p>Applied mathematics, AI &amp; software.</p>
+      <p>Applied mathematics · AI · Software</p>
     </div>
   </div>
 </footer>
-
 <script>
 (function () {
   'use strict';
 
+  var root = document.documentElement;
   var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var desktop = window.matchMedia ? window.matchMedia('(min-width: 1024px)') : { matches: true };
 
-  /* ---------------- mobile menu ---------------- */
+  /* ---------------- header: solid once the page scrolls ---------------- */
+  (function () {
+    var header = document.getElementById('site-header');
+    if (!header) return;
+    var ticking = false;
+    function update() { header.classList.toggle('is-scrolled', window.scrollY > 8); ticking = false; }
+    window.addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    }, { passive: true });
+    update();
+  })();
+
+  /* ---------------- mobile menu (full-screen sheet) ---------------- */
   (function () {
     var btn = document.getElementById('menu-btn');
     var menu = document.getElementById('mobile-menu');
     if (!btn || !menu) return;
-    btn.addEventListener('click', function () {
-      var open = !menu.classList.toggle('hidden');
+
+    var behind = [document.getElementById('main'), document.querySelector('footer')].filter(Boolean);
+    function setOpen(open) {
+      root.classList.toggle('menu-open', open);
+      behind.forEach(function (el) { el.inert = open; if (open) el.setAttribute('aria-hidden', 'true'); else el.removeAttribute('aria-hidden'); });
       btn.setAttribute('aria-expanded', String(open));
       btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-    });
+    }
+    btn.addEventListener('click', function () { setOpen(!root.classList.contains('menu-open')); });
     menu.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', function () {
-        menu.classList.add('hidden');
-        btn.setAttribute('aria-expanded', 'false');
-        btn.setAttribute('aria-label', 'Open menu');
-      });
+      a.addEventListener('click', function () { setOpen(false); });
     });
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && !menu.classList.contains('hidden')) {
-        menu.classList.add('hidden');
-        btn.setAttribute('aria-expanded', 'false');
-        btn.focus();
-      }
+      if (e.key === 'Escape' && root.classList.contains('menu-open')) { setOpen(false); btn.focus(); }
     });
+    var onBp = function (e) { if (e.matches) setOpen(false); };
+    if (desktop.addEventListener) desktop.addEventListener('change', onBp);
+    else if (desktop.addListener) desktop.addListener(onBp);
   })();
 
-  /* ---------------- mark section headings for reveal ---------------- */
+  /* ---------------- section headings reveal on scroll ---------------- */
   document.querySelectorAll('main section').forEach(function (s) {
     var h = s.querySelector('h2');
-    if (!h) return;
+    if (!h || h.closest('.reveal, .stagger, .hero-stagger')) return;
     var p = h.parentElement;
-    if (p && p !== s && !p.querySelector('.stagger')) p.classList.add('reveal');
+    if (p && p !== s && !p.querySelector('.stagger, .reveal')) p.classList.add('reveal');
     else h.classList.add('reveal');
   });
 
   /* ---------------- number count-up ----------------
-     Reads the number already in the HTML, counts to it, then restores the
-     exact original text — so with JS off the real figure is still shown.  */
+     Reads the figure already in the HTML, counts to it, then restores the exact
+     original text. With JS off (or for crawlers) the real number is always there. */
   function countUp(el) {
     var raw = el.textContent.trim();
     var target = parseFloat(raw.replace(/[^0-9.]/g, ''));
     if (!isFinite(target)) return;
     var from = parseFloat(el.getAttribute('data-from') || '0');
     var grouped = raw.indexOf(',') > -1;
-
-    // freeze the final width first, so the "+" next to it never shifts
     el.style.display = 'inline-block';
-    el.style.minWidth = el.getBoundingClientRect().width + 'px';
-
+    el.style.minWidth = el.getBoundingClientRect().width + 'px';   // "+" next to it never shifts
     var dur = 1500, start = null;
     function frame(now) {
       if (start === null) start = now;
       var p = Math.min((now - start) / dur, 1);
-      var eased = 1 - Math.pow(1 - p, 3);
-      var v = Math.round(from + (target - from) * eased);
+      var v = Math.round(from + (target - from) * (1 - Math.pow(1 - p, 3)));
       el.textContent = grouped ? v.toLocaleString('en-US') : String(v);
-      if (p < 1) requestAnimationFrame(frame);
-      else el.textContent = raw;
+      if (p < 1) requestAnimationFrame(frame); else el.textContent = raw;
     }
     requestAnimationFrame(frame);
   }
 
-  /* ---------------- scroll reveal + counters ---------------- */
+  /* ---------------- reveal + counters ---------------- */
   (function () {
     var targets = document.querySelectorAll('.reveal, .stagger, [data-count]');
     if (!targets.length) return;
-
     if (reduced || !('IntersectionObserver' in window)) {
       targets.forEach(function (el) { el.classList.add('is-in'); });
       return;
     }
-
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         if (!e.isIntersecting) return;
-        var el = e.target;
-        el.classList.add('is-in');
-        if (el.hasAttribute('data-count')) countUp(el);
-        io.unobserve(el);
+        e.target.classList.add('is-in');
+        if (e.target.hasAttribute('data-count')) countUp(e.target);
+        io.unobserve(e.target);
       });
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
-
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
     targets.forEach(function (el) { io.observe(el); });
   })();
+
+  /* ---------------- "Read more" on phones ---------------- */
+  document.querySelectorAll('.collapsible').forEach(function (box, i) {
+    var btn = box.querySelector('.more-btn');
+    var more = box.querySelector('.more-content');
+    if (!btn || !more) return;
+    if (!more.id) more.id = 'more-' + (i + 1);
+    btn.setAttribute('aria-controls', more.id);
+    btn.addEventListener('click', function () {
+      var open = box.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', String(open));
+      btn.querySelector('span').textContent = open ? 'Show less' : 'Read more';
+    });
+  });
+
+  /* ---------------- horizontal scrollers: edge fade + arrow buttons ---------------- */
+  document.querySelectorAll('.chips-scroll').forEach(function (el) {
+    function check() { el.classList.toggle('at-end', el.scrollLeft + el.clientWidth >= el.scrollWidth - 4); }
+    el.addEventListener('scroll', check, { passive: true });
+    window.addEventListener('resize', check);
+    check();
+  });
+
+  document.querySelectorAll('[data-scroller]').forEach(function (wrap) {
+    var track = wrap.querySelector('.gallery');
+    var prev = wrap.querySelector('[data-dir="-1"]');
+    var next = wrap.querySelector('[data-dir="1"]');
+    if (!track || !prev || !next) return;
+    function update() {
+      prev.disabled = track.scrollLeft <= 2;
+      next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+    }
+    [prev, next].forEach(function (b) {
+      b.addEventListener('click', function () {
+        track.scrollBy({ left: Number(b.getAttribute('data-dir')) * track.clientWidth * 0.8, behavior: reduced ? 'auto' : 'smooth' });
+      });
+    });
+    track.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  });
 
   /* ---------------- project filter ---------------- */
   (function () {
@@ -715,37 +535,34 @@
 
     var count = document.getElementById('filter-count');
     var empty = document.getElementById('empty-state');
-    var flagship = document.getElementById('flagship');
-    var more = document.getElementById('more');
+    var groups = Array.prototype.slice.call(document.querySelectorAll('[data-group]'));
+    var extras = Array.prototype.slice.call(document.querySelectorAll('[data-show-for]'));
 
     function apply(filter, animate) {
-      var shown = 0, flagshipShown = 0, moreShown = 0, visible = [];
-
+      var shown = 0, visible = [];
       items.forEach(function (el) {
-        var match = filter === 'all' ||
-          (' ' + el.getAttribute('data-tags') + ' ').indexOf(' ' + filter + ' ') > -1;
+        var match = filter === 'all' || (' ' + el.getAttribute('data-tags') + ' ').indexOf(' ' + filter + ' ') > -1;
         el.classList.toggle('hidden', !match);
-        if (match) {
-          shown++;
-          visible.push(el);
-          if (flagship && flagship.contains(el)) flagshipShown++; else moreShown++;
-        }
+        if (match) { shown++; visible.push(el); }
       });
-
-      chips.forEach(function (c) {
-        c.setAttribute('aria-pressed', String(c.getAttribute('data-filter') === filter));
+      groups.forEach(function (g) {
+        var n = g.querySelectorAll('[data-tags]:not(.hidden)').length;
+        g.classList.toggle('hidden', n === 0);
+        var c = g.querySelector('[data-group-count]');
+        if (c) c.textContent = (n < 10 ? '0' : '') + n;
       });
-
+      extras.forEach(function (x) {
+        x.classList.toggle('hidden', (' ' + x.getAttribute('data-show-for') + ' ').indexOf(' ' + filter + ' ') < 0);
+      });
+      chips.forEach(function (c) { c.setAttribute('aria-pressed', String(c.getAttribute('data-filter') === filter)); });
       if (count) count.textContent = shown + (shown === 1 ? ' project' : ' projects');
-      if (flagship) flagship.classList.toggle('hidden', flagshipShown === 0);
-      if (more) more.classList.toggle('hidden', moreShown === 0);
       if (empty) empty.classList.toggle('hidden', shown !== 0);
 
       if (animate && !reduced) {
         visible.forEach(function (el, i) {
           el.classList.remove('filter-enter');
-          void el.offsetWidth;                       // restart the animation
-          el.style.animationDelay = Math.min(i, 8) * 40 + 'ms';
+          void el.offsetWidth;                                   // restart the animation
+          el.style.animationDelay = Math.min(i, 8) * 45 + 'ms';
           el.classList.add('filter-enter');
         });
       }
@@ -754,6 +571,13 @@
     chips.forEach(function (c) {
       c.addEventListener('click', function () {
         apply(c.getAttribute('data-filter'), true);
+        var bar = document.querySelector('.filter-bar');
+        var first = document.querySelector('[data-group]:not(.hidden)');
+        // bring the list back into view if the reader had scrolled far down
+        if (bar && first && first.getBoundingClientRect().top < 0) {
+          var y = first.getBoundingClientRect().top + window.scrollY - bar.getBoundingClientRect().bottom + 1;
+          window.scrollTo({ top: y, behavior: reduced ? 'auto' : 'smooth' });
+        }
       });
     });
 
